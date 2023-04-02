@@ -1,0 +1,14 @@
+@import '../../styles/source/core.scss';
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $gutter;
+
+    img {
+        border-radius: 50%;
+        background-color: lightgray;
+    }
+}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {IoMenuOutline, IoCartOutline, IoPersonOutline, IoSearchSharp} from 'react-icons/io5'
 import styles from './header.module.scss';
 
@@ -9,7 +10,9 @@ export default function Header() {
             <button className="button--icon">
               <IoMenuOutline className={styles.header__icon}/>
             </button>
-            <Image className={styles.header__logo} src="/next.svg" width={64} height={64} alt="Logo of nc commerce"/>
+            <Link href='/'>
+              <Image src="/next.svg" width={80} height={80} alt="Logo of nc commerce"/>
+            </Link>
             <div>
                 <button className="button--icon">
                 <IoPersonOutline className={styles.header__icon}/>

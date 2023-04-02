@@ -1,0 +1,11 @@
+@import '../../../styles/source/core.scss';
+
+.listNavigate {
+
+    &__list {
+        display: flex;
+        gap: $gutter * 4;
+        overflow: auto;
+        padding-bottom: $gutter * 4;
+    }
+}

@@ -1,0 +1,36 @@
+@import '../../../styles/source/core.scss';
+
+.productTile {
+    width: min-content;
+    border: 1px solid $black;
+
+    img {
+        padding: $gutter;
+        background-color: lightgray;
+    }
+
+    h2 {
+        @include fontSize(1.6);
+        color: $black;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter;
+        gap: $gutter;
+    }
+
+    &__company{
+        font-weight: $medium;
+    }
+
+    &__priceTotal {
+        @include fontSize(2.0);
+        font-weight: $bold;
+    }
+
+    &__priceParcel {
+        @include fontSize(1.4);
+    }
+}
