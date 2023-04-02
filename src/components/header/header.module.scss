@@ -1,0 +1,53 @@
+@import '../../styles/source/core.scss';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: $gutter * 2 $gutter;
+    gap: $gutter * 2;
+    background-color: #232f3e;
+
+    &__top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__search {
+        position: relative;
+        display: flex;
+        width: 100%;
+
+        input {
+            min-height: $gutter * 5;
+            border: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        button {
+            background-color: #fcbb6a;
+            border-radius: $borderRadius;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__categories {
+        display: flex;
+        gap: $gutter * 4;
+        overflow: auto
+    }
+
+    &__category {
+        @include fontSize(1.6);
+        color: $white;
+    }
+
+    &__icon {
+        @include fontSize(3.2);
+        color: $white;
+    }
+}
