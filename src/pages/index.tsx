@@ -6,13 +6,14 @@ import Tile from '../components/tile/tile';
 import TileSquare from '../components/tile/tileSquare/tileSquare';
 import Card from '../components/card/card';
 import Minicart from '../components/cart/minicart';
+import '../i18n/index.js';
 
 export default function Home() {
   return (
     <>
-      <Minicart/>
       <Header/>
       <main>
+        <Minicart/>
         <div className='container'>
           <section className='section--categoryNavigate'>
             <h2>Navegue por categorias</h2>

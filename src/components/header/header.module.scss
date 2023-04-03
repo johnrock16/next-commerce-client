@@ -1,11 +1,14 @@
 @import '../../styles/source/core.scss';
 
 .header {
-    display: flex;
-    flex-direction: column;
-    padding: $gutter * 2 $gutter;
-    gap: $gutter * 2;
     background-color: #232f3e;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter * 2;
+        padding: $gutter * 2 $gutter;
+    }
 
     &__top {
         display: flex;

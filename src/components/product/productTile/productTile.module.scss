@@ -1,6 +1,9 @@
 @import '../../../styles/source/core.scss';
 
 .productTile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: min-content;
     border: 1px solid $black;
 
@@ -31,5 +34,16 @@
 
     &__priceParcel {
         @include fontSize(1.4);
+    }
+
+    &__buttonContainer {
+        display: flex;
+        justify-self: flex-end;
+        height: 100%;
+        padding-top: $gutter * 2;
+
+        > button {
+            align-self: flex-end;
+        }
     }
 }

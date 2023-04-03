@@ -12,15 +12,18 @@ export default function ProductTile({pid}) {
         dispatch(addProduct(PRODUCT[id]));
     }
     return(
-        <div className={styles.productTile} onClick={handleProductAdd}>
-            <a>
+        <div className={styles.productTile}>
+            <a href=''>
                 <Image src={image.src} alt='next logo' width={200} height={200} loading='lazy'/>
             </a>
             <div className={styles.productTile__description}>
-                <h3>{name}</h3>
+                <a href=''><h3>{name}</h3></a>
                 <a className={styles.productTile__company} href=''>{seller}</a>
                 <span className={styles.productTile__priceTotal}>R$ {price.total}</span>
                 <span className={styles.productTile__priceParcel}>em até {price.parcel.times}x de R$ {price.parcel.value} sem juros</span>
+            </div>
+            <div className={styles.productTile__buttonContainer}>
+                <button className="button button--buyTile" onClick={handleProductAdd}>Comprar</button>
             </div>
         </div>
     )

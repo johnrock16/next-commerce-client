@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import {IoPersonOutline} from 'react-icons/io5';
 import styles from './minicart.module.scss';
 import { useEffect, useState } from 'react';
@@ -6,6 +7,7 @@ import Image from 'next/image';
 
 export default function Minicart() {
     const [open, setOpen] = useState(false);
+    const { t } = useTranslation();
     const cart = useSelector((state) => state.cart);
 
     const handleOpen = (open) => {
@@ -30,8 +32,7 @@ export default function Minicart() {
         ((open && cart.items) ? <div className={styles.minicart} onClick={()=>{handleOpen(false)}}>
             <div className={styles.minicart__wrapper}>
                 <div className={styles.minicart__top}>
-                    <div className={styles.minicart__profile}>
-                        <span><a>Cadastre-se</a>ou faça<a>login</a></span>
+                    <div className={styles.minicart__profile}><p><a>{t('components.menu.login.register')}</a>{t('components.menu.login.or')}<a>{t('components.menu.login.login')}</a></p>
                         <IoPersonOutline className={styles.minicart__icon}/>
                     </div>
                     <a className={styles.minicart__title}>Seu Carrinho</a>
