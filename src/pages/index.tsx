@@ -5,11 +5,12 @@ import ProductTile from '../components/product/productTile/productTile';
 import Tile from '../components/tile/tile';
 import TileSquare from '../components/tile/tileSquare/tileSquare';
 import Card from '../components/card/card';
-import Menu from '../components/menu/menu';
+import Minicart from '../components/cart/minicart';
 
 export default function Home() {
   return (
     <>
+      <Minicart/>
       <Header/>
       <main>
         <div className='container'>
@@ -26,17 +27,17 @@ export default function Home() {
           <section className='section--productNavigate'>
             <h2>Mais vendidos</h2>
             <ListNavigate>
-              <ProductTile image={{src: '/images/product/controller.webp'}}/>
-              <ProductTile image={{src: '/next.svg'}}/>
-              <ProductTile image={{src: '/images/category/smartphone.webp'}}/>
+              <ProductTile pid="ps4ctrl"/>
+              <ProductTile pid="ns2017"/>
+              <ProductTile pid="smphone"/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Recomendados</h2>
             <ListNavigate>
-              <ProductTile image={{src: '/images/product/controller.webp'}}/>
-              <ProductTile image={{src: '/next.svg'}}/>
-              <ProductTile image={{src: '/images/category/smartphone.webp'}}/>
+              <ProductTile pid="ps4ctrl"/>
+              <ProductTile pid="ns2017"/>
+              <ProductTile pid="smphone"/>
             </ListNavigate>
           </section>
           <Card>

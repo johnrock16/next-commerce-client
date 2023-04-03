@@ -1,0 +1,53 @@
+{
+    "ps4ctrl":{
+        "id":"ps4ctrl",
+        "name": "Console Controller 4",
+        "seller": "Video games & store",
+        "count": 1,
+        "price":{
+            "total": 2291.00,
+            "parcel":{
+                "times": 10,
+                "value": 229.18
+            }
+        },
+        "image":{
+            "src": "/images/product/controller.webp",
+            "alt": "alt"
+        }
+    },
+    "ns2017": {
+        "id":"ns2017",
+        "name": "Console Ziztezdo Ifs Azul e Vermelho + Con Neon + Marinho Kart + 3 Meses de Assinatura Ziztezdo Ifs Online",
+        "seller": "Ziztendo",
+        "count": 1,
+        "price":{
+            "total": 2291.00,
+            "parcel":{
+                "times": 10,
+                "value": 229.18
+            }
+        },
+        "image":{
+            "src": "/next.svg",
+            "alt": "alt"
+        }
+    },
+    "smphone": {
+        "id":"smphone",
+        "name": "Smartphone Smart",
+        "seller": "Smart phones",
+        "count": 1,
+        "price":{
+            "total": 2291.00,
+            "parcel":{
+                "times": 10,
+                "value": 229.18
+            }
+        },
+        "image":{
+            "src": "/images/category/smartphone.webp",
+            "alt": "alt"
+        }
+    }
+}

@@ -1,9 +1,9 @@
-import {IoPersonOutline} from 'react-icons/io5'
+import {IoPersonOutline} from 'react-icons/io5';
 import styles from './menu.module.scss';
 
-export default function Menu() {
+export default function Menu({onClose}) {
     return (
-        <div className={styles.menu}>
+        <div className={styles.menu} onClick={onClose}>
             <div className={styles.menu__wrapper}>
                 <div className={styles.menu__top}>
                     <div className={styles.menu__profile}>
