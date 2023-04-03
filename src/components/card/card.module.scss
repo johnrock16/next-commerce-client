@@ -1,0 +1,15 @@
+@import '../../styles/source/core.scss';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: $gutter * 2;
+    gap: $gutter;
+    background-color: $white;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+
+    h2 {
+        @include fontSize(2.0);
+    }
+}

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import styles from './productTile.module.scss';
 
-export default function ProductTile() {
+export default function ProductTile({image}) {
     return(
         <div className={styles.productTile}>
             <a>
-                <Image src='/next.svg' alt='next logo' width={200} height={200}/>
+                <Image src={image.src} alt='next logo' width={200} height={200} loading='lazy'/>
             </a>
             <div className={styles.productTile__description}>
                 <h3>Console Nintendo Switch Azul e Vermelho + Joy-Con Neon + Mario Kart 8 Deluxe + 3 Meses de Assinatura Nintendo Switch Online</h3>

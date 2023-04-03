@@ -3,6 +3,9 @@ import Footer from '../components/footer/footer';
 import ListNavigate from '../components/list/listNavigate/listNavigate';
 import ProductTile from '../components/product/productTile/productTile';
 import Tile from '../components/tile/tile';
+import TileSquare from '../components/tile/tileSquare/tileSquare';
+import Card from '../components/card/card';
+import Menu from '../components/menu/menu';
 
 export default function Home() {
   return (
@@ -16,24 +19,54 @@ export default function Home() {
               <Tile/>
               <Tile/>
               <Tile/>
+              <Tile/>
+              <Tile/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Mais vendidos</h2>
             <ListNavigate>
-              <ProductTile/>
-              <ProductTile/>
-              <ProductTile/>
+              <ProductTile image={{src: '/images/product/controller.webp'}}/>
+              <ProductTile image={{src: '/next.svg'}}/>
+              <ProductTile image={{src: '/images/category/smartphone.webp'}}/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Recomendados</h2>
             <ListNavigate>
-              <ProductTile/>
-              <ProductTile/>
-              <ProductTile/>
+              <ProductTile image={{src: '/images/product/controller.webp'}}/>
+              <ProductTile image={{src: '/next.svg'}}/>
+              <ProductTile image={{src: '/images/category/smartphone.webp'}}/>
             </ListNavigate>
           </section>
+          <Card>
+            <TileSquare/>
+          </Card>
+          <Card>
+            <div className='grid--card'>
+              <TileSquare/>
+              <TileSquare/>
+              <TileSquare/>
+              <TileSquare/>
+            </div>
+          </Card>
+          <Card>
+            <TileSquare/>
+          </Card>
+          <Card>
+            <TileSquare/>
+          </Card>
+
+          <Card>
+            <div className='grid--card'>
+              <TileSquare/>
+              <TileSquare/>
+              <TileSquare/>
+              <TileSquare/>
+              <TileSquare/>
+              <TileSquare/>
+            </div>
+          </Card>
         </div>
       </main>
       <Footer/>
