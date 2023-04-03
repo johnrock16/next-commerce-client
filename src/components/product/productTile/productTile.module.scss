@@ -1,0 +1,49 @@
+@import '../../../styles/source/core.scss';
+
+.productTile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    border: 1px solid $black;
+
+    img {
+        background-color: lightgray;
+    }
+
+    h3 {
+        @include fontSize(1.6);
+        color: $black;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter;
+        gap: $gutter;
+    }
+
+    &__company{
+        font-weight: $medium;
+    }
+
+    &__priceTotal {
+        @include fontSize(2.0);
+        font-weight: $bold;
+    }
+
+    &__priceParcel {
+        @include fontSize(1.4);
+    }
+
+    &__buttonContainer {
+        display: flex;
+        justify-self: flex-end;
+        height: 100%;
+        padding-top: $gutter * 2;
+
+        > button {
+            align-self: flex-end;
+        }
+    }
+}

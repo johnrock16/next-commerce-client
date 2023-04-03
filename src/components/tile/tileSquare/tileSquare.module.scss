@@ -1,0 +1,19 @@
+@import '../../../styles/source/core.scss';
+
+.tileSquare {
+    display: flex;
+    flex-direction: column;
+    gap: $gutter;
+    box-sizing: content-box;
+
+    img {
+        background-color: lightgray;
+        width: 100%;
+        height: 100%;
+    }
+
+    span {
+        @include fontSize(1.6);
+        font-weight: $medium;
+    }
+}

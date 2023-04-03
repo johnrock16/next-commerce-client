@@ -1,0 +1,17 @@
+.section {
+    &--productNavigate, &--categoryNavigate {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter;
+        padding: $gutter * 3 $gutter * 2 $gutter $gutter * 2;
+
+        h2 {
+            @include fontSize(2.4);
+            font-weight: $bold;
+        }
+    }
+
+    &--categoryNavigate {
+        gap: $gutter * 2;
+    }
+}

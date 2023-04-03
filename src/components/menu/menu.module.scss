@@ -1,0 +1,67 @@
+@import '../../styles/source/core.scss';
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000073;
+    z-index: 1;
+
+    &__wrapper {
+        width: fit-content;
+        max-width: 80vw;
+        height: 100%;
+        background-color: $white;
+        z-index: 2;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter * 3;
+        padding: $gutter * 3 $gutter * 2 $gutter * 2 $gutter * 2;
+        color: $white;
+        background-color: #232f3e;
+    }
+
+
+    &__profile {
+        display: flex;
+        align-self: flex-end;
+        gap: $gutter;
+        @include fontSize(2.4);
+
+        span {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+
+    &__title {
+        @include fontSize(2.0);
+        font-weight: $medium;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter * 2;
+        gap: $gutter * 3;
+        border-bottom: 1px solid $black;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        span {
+            @include fontSize(1.6);
+
+            &:first-child {
+                @include fontSize(2.0);
+                font-weight: $bold;
+            }
+        }
+    }
+}

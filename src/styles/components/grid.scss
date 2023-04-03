@@ -1,0 +1,14 @@
+.grid {
+    &--card {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: $gutter * 2;
+
+        & > * > img {
+            width: 40vw;
+            height: 40vw;
+            max-width: 300px;
+            max-height: 300px;
+        }
+    }
+}

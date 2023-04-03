@@ -1,0 +1,16 @@
+@import '../../styles/source/core.scss';
+
+.footer {
+    padding: $gutter * 4;
+    color: $white;
+    background-color: #0D141E;
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $gutter * 2;
+
+        @include fontSize(1.2);
+    }
+}

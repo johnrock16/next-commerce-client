@@ -1,6 +1,20 @@
-import type { AppProps } from 'next/app'
+import React, {FC} from 'react';
+import {Provider} from 'react-redux';
+import {AppProps} from 'next/app';
+import {wrapper} from '../store';
 import '../styles/main.scss';
+import Head from 'next/head';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+const MyApp: FC<AppProps> = ({Component, ...rest}) => {
+  const {store, props} = wrapper.useWrappedStore(rest);
+  return (
+    <Provider store={store}>
+    <Head>
+      <title>Next E-commerce</title>
+    </Head>
+      <Component {...props.pageProps} />
+    </Provider>
+  );
+};
+
+export default MyApp;
