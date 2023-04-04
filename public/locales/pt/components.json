@@ -1,0 +1,18 @@
+{
+    "menu": {
+        "welcome": "Bem vindo ao Next Ecommerce",
+        "login": {
+            "register":"Cadastre-se",
+            "or":" ou façã ",
+            "login":"login"
+        }
+    },
+    "minicart": {
+        "cart": "Seu Carrinho",
+        "login": {
+            "register":"Cadastre-se",
+            "or":" ou faça ",
+            "login":"login"
+        }
+    }
+}

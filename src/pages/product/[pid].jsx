@@ -1,13 +1,13 @@
 
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../../store/reducers/cart';
+import { addProduct } from '@store/reducers/cart';
 import Image from 'next/image';
-import Header from '../../components/header/header';
-import Footer from '../../components/footer/footer';
-import Minicart from '../../components/cart/minicart';
-import PRODUCTS from '../../mock/product/products.json';
+import Header from '@components/header/header';
+import Footer from '@components/footer/footer';
+import Minicart from '@components/cart/minicart';
+import PRODUCTS from '@mock/product/products.json';
 import styles from './product.module.scss';
-import '../../i18n/index.js';
+import '@i18n/index.js';
 
 export const getServerSideProps = async ({ query }) => {
     const pid = query.pid;

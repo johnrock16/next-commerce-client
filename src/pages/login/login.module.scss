@@ -1,6 +1,6 @@
 @import '../../styles/source/core.scss';
 
-.registerPage {
+.loginPage {
     min-height: 80vh;
 
     h1 {
@@ -8,17 +8,19 @@
     }
 
     form {
-        padding-bottom: $gutter;
+        padding: $gutter * 2;
+        border: 1px solid $black;
     }
 
     &__wrapper {
         padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
     }
 
-    &__login {
+    &__register {
         display: flex;
         justify-content: center;
         width: 100%;
         gap: 4px;
+        padding-top: $gutter * 2;
     }
 }

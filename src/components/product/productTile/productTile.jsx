@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import styles from './productTile.module.scss';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../../../store/reducers/cart';
-import PRODUCT from '../../../mock/product/products.json';
+import { addProduct } from '@store/reducers/cart';
+import PRODUCT from '@mock/product/products.json';
 import Link from 'next/link';
 
 export default function ProductTile({pid}) {

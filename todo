@@ -1,0 +1,7 @@
+- Adicionar outro i18n de preferencia o nativo e transformar em server side para remover os erros de diferença do HTML do servidor pro cliente
+- Tentar resolver o problema da validação dos formularios adaptando minha biblioteca para React
+- Começar a desenvolver a Area da Minha Conta (Meus dados, meus endereços, meus favoritos, minhas compras, etc.)
+- Adicionar persistencia no Redux e começar a desenvolver a sessão do carrinho e o do usuário no front-end
+- Desenvolver tela de checkout
+- Desenvolver tela de categoria
+- Desenvolver tela de pesquisa

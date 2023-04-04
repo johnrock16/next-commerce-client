@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 import {IoMenuOutline, IoCartOutline, IoPersonOutline, IoSearchSharp} from 'react-icons/io5'
 import Menu from '../menu/menu';
 import styles from './header.module.scss';
@@ -26,7 +26,7 @@ export default function Header() {
                 <Image src="/next.svg" width={80} height={80} alt="Logo of nc commerce" loading='lazy'/>
               </Link>
               <div>
-                  <Link href='/register' className="button--icon">
+                  <Link href='/login' className="button--icon">
                     <IoPersonOutline className={styles.header__icon}/>
                   </Link>
                   <button className="button--icon" onClick={handleMiniCart}>

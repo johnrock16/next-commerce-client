@@ -29,7 +29,7 @@
             }
         },
         "image":{
-            "src": "/next.svg",
+            "src": "/images/product/notebook.webp",
             "alt": "alt"
         }
     },

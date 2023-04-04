@@ -1,14 +1,22 @@
-import Header from '../components/header/header';
-import Footer from '../components/footer/footer';
-import ListNavigate from '../components/list/listNavigate/listNavigate';
-import ProductTile from '../components/product/productTile/productTile';
-import Tile from '../components/tile/tile';
-import TileSquare from '../components/tile/tileSquare/tileSquare';
-import Card from '../components/card/card';
-import Minicart from '../components/cart/minicart';
-import '../i18n/index.js';
+import Header from '@components/header/header';
+import Footer from '@components/footer/footer';
+import ListNavigate from '@components/list/listNavigate/listNavigate';
+import ProductTile from '@components/product/productTile/productTile';
+import Tile from '@components/tile/tile';
+import TileSquare from '@components/tile/tileSquare/tileSquare';
+import Card from '@components/card/card';
+import Minicart from '@components/cart/minicart';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export default function Home() {
+// @ts-ignore: next-line
+export async function getStaticProps({ locale }) {
+  return {
+    props: {...await serverSideTranslations(locale, ['components'])},
+  }
+}
+
+export default function Home(props) {
+  console.log(props)
   return (
     <>
       <Header/>

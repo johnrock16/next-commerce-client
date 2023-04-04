@@ -1,0 +1,18 @@
+{
+    "register": {
+        "title": "Register",
+        "form": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phone": "Phone",
+            "birthday": "Birthday",
+            "password": "Password",
+            "button": "Register"
+        },
+        "login": {
+            "text": "or if you already have a account ",
+            "login": "login"
+        }
+    }
+}
