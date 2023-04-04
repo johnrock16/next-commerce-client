@@ -30,6 +30,11 @@
         border: none;
     }
 
+    &--buy {
+        @include fontSize(1.6);
+        height: 60px;
+    }
+
     &--buyTile {
         height: 40px;
     }

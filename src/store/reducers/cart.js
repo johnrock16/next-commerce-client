@@ -11,7 +11,11 @@ const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       const {id, count, name, price, seller, image } = action.payload;
-      const items = {...state.items, [id]:{id, count, name, price, seller, image}}
+      const items = {...state.items, [id]:{id, count, name, price, seller, image}};
+
+      const eventMinicartOpen = new CustomEvent('minicart/open');
+      window.dispatchEvent(eventMinicartOpen);
+
       return {
         ...state,
         items,

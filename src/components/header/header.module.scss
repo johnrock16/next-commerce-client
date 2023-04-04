@@ -16,6 +16,11 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+
+        &--simple {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__search {

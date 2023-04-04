@@ -21,7 +21,6 @@ export default function Menu({onClose}) {
                         <span>Recomendado</span>
                         <span>Mais vendidos</span>
                     </div>
-
                     <div className={styles.menu__list}>
                         <span>Categorias</span>
                         <span>Computadores</span>

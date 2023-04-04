@@ -12,6 +12,11 @@ const EN_US = {
       minicart: {
         minicart: "Your Minicart"
       }
+    },
+    pages: {
+      register: {
+        login: "or if you already have a account "
+      }
     }
   }
 }

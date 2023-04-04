@@ -24,10 +24,6 @@ export default function Minicart() {
         });
     }, []);
 
-    useEffect(() => {
-        handleOpen(cart.length > 0)
-    }, [cart.length]);
-
     return (
         ((open && cart.items) ? <div className={styles.minicart} onClick={()=>{handleOpen(false)}}>
             <div className={styles.minicart__wrapper}>

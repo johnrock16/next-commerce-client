@@ -1,0 +1,16 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: $gutter * 2;
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter;
+
+        input {
+            padding: 0 $gutter;
+            max-width: calc(100% - $gutter * 4);
+        }
+    }
+}

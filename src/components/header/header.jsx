@@ -26,9 +26,9 @@ export default function Header() {
                 <Image src="/next.svg" width={80} height={80} alt="Logo of nc commerce" loading='lazy'/>
               </Link>
               <div>
-                  <button className="button--icon">
-                  < IoPersonOutline className={styles.header__icon}/>
-                  </button>
+                  <Link href='/register' className="button--icon">
+                    <IoPersonOutline className={styles.header__icon}/>
+                  </Link>
                   <button className="button--icon" onClick={handleMiniCart}>
                     <IoCartOutline className={styles.header__icon}/>
                   </button>

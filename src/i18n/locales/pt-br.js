@@ -12,6 +12,11 @@ const PT_BR = {
       minicart: {
         minicart: "Seu Carrinho"
       }
+    },
+    pages: {
+      register: {
+        login: "Ou se você já possuí uma conta"
+      }
     }
   }
 }

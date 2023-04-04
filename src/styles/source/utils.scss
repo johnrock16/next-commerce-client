@@ -36,8 +36,12 @@ h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
-p, span, a {
+p, span, a, label {
     @include fontSize(1.4);
+}
+
+input {
+    min-height: 32px;
 }
 
 a {
@@ -45,6 +49,13 @@ a {
     text-decoration: none;
 
     &:hover {
+        text-decoration: underline;
+    }
+}
+
+span, p {
+    a {
+        font-weight: $bold;
         text-decoration: underline;
     }
 }
