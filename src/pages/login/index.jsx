@@ -1,11 +1,18 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './login.module.scss';
 
+export async function getStaticProps({ locale }) {
+    return {
+      props: {...await serverSideTranslations(locale, ['login'])},
+    }
+}
+
 const LoginPage = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('login');
     return (
     <>
         <SimpleHeader/>
@@ -24,9 +31,9 @@ const LoginPage = () => {
                             <input className='form__input' type='password'/>
                             <span className='form__error'></span>
                         </div>
-                        <button className='form__button button button--secondary col-12' type='submit'>Login</button>
+                        <Link href='/myAccount' className='form__button button button--secondary col-12' type='submit'>Login</Link>
                     </form>
-                    <span className={styles.loginPage__register}>Dont have a account yet? <Link href='/register'>register</Link></span>
+                    <span className={styles.loginPage__register}>{t('withoutAccount')}<Link href='/register'>{t('register')}</Link></span>
                 </div>
             </div>
         </main>

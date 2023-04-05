@@ -15,8 +15,7 @@ export async function getStaticProps({ locale }) {
   }
 }
 
-export default function Home(props) {
-  console.log(props)
+export default function Home() {
   return (
     <>
       <Header/>
@@ -31,6 +30,9 @@ export default function Home(props) {
               <Tile/>
               <Tile/>
               <Tile/>
+              <Tile/>
+              <Tile/>
+              <Tile/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
@@ -39,11 +41,17 @@ export default function Home(props) {
               <ProductTile pid="ps4ctrl"/>
               <ProductTile pid="ns2017"/>
               <ProductTile pid="smphone"/>
+              <ProductTile pid="ps4ctrl"/>
+              <ProductTile pid="ns2017"/>
+              <ProductTile pid="smphone"/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Recomendados</h2>
             <ListNavigate>
+              <ProductTile pid="ps4ctrl"/>
+              <ProductTile pid="ns2017"/>
+              <ProductTile pid="smphone"/>
               <ProductTile pid="ps4ctrl"/>
               <ProductTile pid="ns2017"/>
               <ProductTile pid="smphone"/>

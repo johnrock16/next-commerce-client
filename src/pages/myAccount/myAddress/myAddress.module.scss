@@ -1,0 +1,71 @@
+@import '../../../styles/source/core.scss';
+
+.myAddressPage {
+    min-height: 80vh;
+
+    h1 {
+        padding-bottom: $gutter * 2;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    &__wrapper {
+        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
+    }
+
+    &__addresses {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: $gutter * 2;
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter * 2;
+        gap: $gutter;
+        border: 1px solid $black;
+        border-radius: $borderRadius;
+
+        &--add {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 160px;
+            gap: $gutter;
+            @include fontSize(4.2);
+            border: 1px solid $black;
+            border-radius: $borderRadius;
+
+            h2 {
+                @include fontSize(1.6);
+            }
+        }
+    }
+
+    &__addressButtons {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        height: 100%;
+        gap: $gutter * 2;
+
+        & > a {
+            padding-right: $gutter;
+            font-weight: $bold;
+            border-right: 1px solid $black;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}

@@ -7,7 +7,6 @@ import Footer from '@components/footer/footer';
 import Minicart from '@components/cart/minicart';
 import PRODUCTS from '@mock/product/products.json';
 import styles from './product.module.scss';
-import '@i18n/index.js';
 
 export const getServerSideProps = async ({ query }) => {
     const pid = query.pid;

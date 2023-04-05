@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import {IoPersonOutline} from 'react-icons/io5';
 import Image from 'next/image';
 import styles from './minicart.module.scss';

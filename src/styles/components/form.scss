@@ -8,9 +8,14 @@
         flex-direction: column;
         gap: $gutter;
 
-        input {
+        input, textarea {
             padding: 0 $gutter;
             max-width: calc(100% - $gutter * 4);
+        }
+
+        select {
+            padding: 0 $gutter;
+            max-width: calc(100% - $gutter * 2);
         }
     }
 }

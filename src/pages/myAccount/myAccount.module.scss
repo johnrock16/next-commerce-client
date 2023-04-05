@@ -1,0 +1,36 @@
+@import '../../styles/source/core.scss';
+
+.myAccountPage {
+    min-height: 80vh;
+
+    h1 {
+        padding-bottom: $gutter * 2;
+    }
+
+    &__wrapper {
+        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
+    }
+
+    &__options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $gutter * 2;
+    }
+
+    &__option {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1;
+        min-width: 200px;
+        padding: $gutter * 2;
+        gap: $gutter * 2;
+        border: 1px solid $black;
+        border-radius: $borderRadius;
+    }
+
+    &__icon {
+        @include fontSize(3.6);
+    }
+}
+
