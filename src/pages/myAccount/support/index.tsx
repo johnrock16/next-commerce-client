@@ -26,7 +26,7 @@ export default function SupportPage(){
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>Order number</label>
+                                <label>Description</label>
                                 <textarea className='form__input'/>
                                 <span className='form__error'></span>
                             </div>

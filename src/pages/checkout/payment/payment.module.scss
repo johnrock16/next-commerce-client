@@ -1,0 +1,58 @@
+@import '../../../styles/source/core.scss';
+
+.paymentPage {
+    min-height: 80vh;
+
+    h2 {
+        @include fontSize(1.8);
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter * 2;
+        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: $gutter * 2;
+        border: 1px solid $black;
+        border-radius: 12px;
+    }
+
+    &__boxBottom {
+        padding-top: $gutter;
+    }
+
+    &__add {
+        display: flex;
+        align-items: center;
+        min-height: 24px;
+        gap: $gutter;
+        padding: $gutter;
+        @include fontSize(2.8);
+        border: 1px solid $black;
+        border-radius: $borderRadius;
+
+        span {
+            font-weight: $bold;
+        }
+    }
+
+
+    &__formWrapper {
+        span {
+            @include fontSize(1.8);
+            font-weight: $bold;
+        }
+
+        form {
+            padding: $gutter * 2;
+            border: 1px solid $black;
+            border-radius: $borderRadius;
+        }
+    }
+}

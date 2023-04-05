@@ -1,8 +1,8 @@
+import Link from 'next/link';
 import { IoPersonSharp, IoCubeSharp, IoStarSharp, IoHomeSharp, IoCardSharp, IoChatbubblesSharp } from 'react-icons/io5';
 import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './myAccount.module.scss';
-import Link from 'next/link';
 
 export default function MyAccountPage(){
     return (

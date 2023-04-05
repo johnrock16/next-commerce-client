@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'next-i18next';
-import {IoPersonOutline} from 'react-icons/io5';
-import Image from 'next/image';
+import Link from 'next/link';
+import ProductCart from '../product/productCart/productCart';
 import styles from './minicart.module.scss';
 
 export default function Minicart() {
@@ -21,7 +21,7 @@ export default function Minicart() {
         }
         window.addEventListener('minicart/open', openCart);
         return(() => {
-            window.removeEventListener('minicart/open', openCart)
+            window.removeEventListener('minicart/open', openCart);
         });
     }, []);
 
@@ -29,27 +29,24 @@ export default function Minicart() {
         ((open && cart.items) ? <div className={styles.minicart} onClick={()=>{handleOpen(false)}}>
             <div className={styles.minicart__wrapper}>
                 <div className={styles.minicart__top}>
-                    <div className={styles.minicart__profile}><p><a>{t('minicart.login.register')}</a>{t('minicart.login.or')}<a>{t('minicart.login.login')}</a></p>
-                        <IoPersonOutline className={styles.minicart__icon}/>
+                    <div className={styles.minicart__total}>
+                        <span>R$ 700,00</span>
                     </div>
-                    <a className={styles.minicart__title}>{t('minicart.cart')}</a>
+                    <div className={styles.minicart__action}>
+                        <a className={styles.minicart__title}>{t('minicart.cart')}</a>
+                    </div>
                 </div>
                 <div className={styles.minicart__body}>
                     <div className={styles.minicart__items}>
                         {
                             Object.keys(cart.items).map((key) => (
-                                <div className={styles.minicart__item} key={`minicart-${cart.items[key].id}`}>
-                                    <Image src={cart.items[key].image.src} alt={cart.items[key].image.alt} width={120} height={120}/>
-                                    <div>
-                                        <span>{cart.items[key].name}</span>
-                                        <span>{cart.items[key].seller}</span>
-                                        <span>R${cart.items[key].price.total}</span>
-                                        <span> ou x {cart.items[key].price.parcel.times} de R${cart.items[key].price.parcel.value}</span>
-                                    </div>
-                                </div>
+                                <ProductCart product={cart.items[key]} key={`minicart-${cart.items[key].id}`}/>
                             ))
                         }
                     </div>
+                    <Link href="/checkout" className={styles.minicart__checkout}>
+                        <button className='button button--secondary'>Checkout</button>
+                    </Link>
                 </div>
             </div>
         </div> : null)
