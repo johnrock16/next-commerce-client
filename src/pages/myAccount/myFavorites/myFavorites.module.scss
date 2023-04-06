@@ -7,6 +7,11 @@
         padding-bottom: $gutter * 2;
     }
 
+    h2 {
+        @include fontSize(1.8);
+        padding-bottom: $gutter;
+    }
+
     &__wrapper {
         padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
     }

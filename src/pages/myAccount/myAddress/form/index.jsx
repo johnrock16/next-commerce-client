@@ -1,10 +1,14 @@
 import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './myAddressForm.module.scss';
+import Head from 'next/head';
 
 export default function AddressFormPage(){
     return (
         <>
+            <Head>
+                <meta name='description' content='My Address Form page of Next Ecommerce here you can create and update your address'/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.myAddressFormPage}>
                 <div className='container'>
@@ -12,43 +16,59 @@ export default function AddressFormPage(){
                         <h1>Cadastre seu endereço</h1>
                         <form className='form'>
                             <div className='form__field col-12'>
-                                <label>Nome do seu endereço</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='name'>
+                                    Nome do seu endereço
+                                    <input name='name' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>CEP</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='zipcode'>
+                                    CEP
+                                    <input name='zipcode' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-8'>
-                                <label>Rua</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='street'>
+                                    Rua
+                                    <input name='street' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-4'>
-                                <label>Numero</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='number'>
+                                    Numero
+                                    <input name='number' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>Bairro</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='district'>
+                                    Bairro
+                                    <input name='district' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>Cidade</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='city'>
+                                    Cidade
+                                    <input name='city' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>Estado</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='state'>
+                                    Estado
+                                    <input name='state' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>País</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='country'>
+                                    País
+                                    <input name='country' className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <button className='form__button button button--secondary col-12' type='submit'>Cadastrar</button>

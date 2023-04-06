@@ -7,6 +7,7 @@ import { useState } from 'react';
 import BoletoForm from '../../../components/payment/forms/boletoForm/boletoForm';
 import DebitForm from '../../../components/payment/forms/debitForm/debitForm';
 import CreditForm from '../../../components/payment/forms/creditForm/creditForm';
+import Head from 'next/head';
 
 export default function CheckoutPaymentPage(){
     const [selectedPaymentForm, setSelectedPaymentForm] = useState(null);
@@ -15,6 +16,9 @@ export default function CheckoutPaymentPage(){
     }
     return (
         <>
+            <Head>
+                <meta name='description' content={`Checkout payment page of Next Commerce select a payment method and finish your checkout`}/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.paymentPage}>
                 <div className='container'>
@@ -24,16 +28,22 @@ export default function CheckoutPaymentPage(){
                             <h2>Escolha um metodo de pagamento</h2>
                             <div className={styles.paymentPage__box} onChange={handleSelectPayment}>
                                 <div className='radioField'>
-                                    <label>Boleto</label>
-                                    <input name="address" type="radio" value="boleto"/>
+                                    <label htmlFor='boleto'>
+                                        Boleto
+                                        <input name="boleto" type="radio" value="boleto"/>
+                                    </label>
                                 </div>
                                 <div className='radioField'>
-                                    <label>Cartão de debito</label>
-                                    <input name="address" type="radio" value="debit"/>
+                                    <label htmlFor='debit'>
+                                        Cartão de debito
+                                        <input name="debit" type="radio" value="debit"/>
+                                    </label>
                                 </div>
                                 <div className='radioField'>
-                                    <label>Cartão de crédito</label>
-                                    <input name="address" type="radio" value="credit"/>
+                                    <label htmlFor='credit'>
+                                        Cartão de crédito
+                                        <input name="credit" type="radio" value="credit"/>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -68,12 +78,16 @@ export default function CheckoutPaymentPage(){
                                     <span>Adicionar Endereço</span>
                                 </Link>
                                 <div className='radioField'>
-                                    <label>Casa</label>
-                                    <input name="deliveryService" type="radio"/>
+                                    <label htmlFor='house'>
+                                        Casa
+                                        <input name="house" type="radio"/>
+                                    </label>
                                 </div>
                                 <div className='radioField'>
-                                    <label>Trabalho</label>
-                                    <input name="deliveryService" type="radio"/>
+                                    <label htmlFor='work'>
+                                        Trabalho
+                                        <input name="work" type="radio"/>
+                                    </label>
                                 </div>
                             </div>
                         </div>

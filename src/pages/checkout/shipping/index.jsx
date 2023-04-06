@@ -3,10 +3,14 @@ import Footer from '@components/footer/footer';
 import styles from './shipping.module.scss';
 import { IoAddSharp } from 'react-icons/io5';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function CheckoutShippingPage(){
     return (
         <>
+            <Head>
+                <meta name='description' content={`Checkout shipping page of Next Commerce select a address and a delivery method`}/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.shippingPage}>
                 <div className='container'>

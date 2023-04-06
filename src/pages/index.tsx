@@ -7,6 +7,7 @@ import TileSquare from '@components/tile/tileSquare/tileSquare';
 import Card from '@components/card/card';
 import Minicart from '@components/cart/minicart';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
@@ -18,6 +19,9 @@ export async function getStaticProps({ locale }) {
 export default function Home() {
   return (
     <>
+      <Head>
+        <meta name='description' content='Home page of Next Ecommerce here you can see the most relevant products'/>
+      </Head>
       <Header/>
       <main>
         <Minicart/>

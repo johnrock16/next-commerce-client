@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import {IoPersonOutline} from 'react-icons/io5';
 import styles from './menu.module.scss';
 
@@ -9,10 +10,10 @@ export default function Menu({onClose}) {
             <div className={styles.menu__wrapper}>
                 <div className={styles.menu__top}>
                     <div className={styles.menu__profile}>
-                        <p><a>{t('menu.login.register')}</a>{t('menu.login.or')}<a>{t('menu.login.login')}</a></p>
+                        <p><Link href="/register">{t('menu.login.register')}</Link>{t('menu.login.or')}<Link href="/login">{t('menu.login.login')}</Link></p>
                         <IoPersonOutline className={styles.menu__icon}/>
                     </div>
-                    <a className={styles.menu__title}>{t('menu.welcome')}</a>
+                    <span className={styles.menu__title}>{t('menu.welcome')}</span>
                 </div>
                 <div className={styles.menu__body}>
                     <div className={styles.menu__list}>

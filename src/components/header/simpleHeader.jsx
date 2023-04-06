@@ -9,7 +9,7 @@ export default function SimpleHeader() {
           <div className={styles.header__wrapper}>
             <div className={styles['header__top--simple']}>
               <Link href='/'>
-                <Image src="/next.svg" width={80} height={80} alt="Logo of nc commerce" loading='lazy'/>
+                <Image src="/next.svg" width={80} height={80} alt="Logo of nc commerce" loading='eager'/>
               </Link>
              </div>
             </div>

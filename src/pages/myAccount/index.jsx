@@ -3,10 +3,14 @@ import { IoPersonSharp, IoCubeSharp, IoStarSharp, IoHomeSharp, IoCardSharp, IoCh
 import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './myAccount.module.scss';
+import Head from 'next/head';
 
 export default function MyAccountPage(){
     return (
         <>
+            <Head>
+                <meta name='description' content='My Account page of Next Ecommerce here you navigate through myAccount pages like: myData, myOrders, myFavorites, myAddress, myCards and support'/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.myAccountPage}>
                 <div className='container'>

@@ -6,6 +6,7 @@ import Footer from '@components/footer/footer';
 import Minicart from '@components/cart/minicart';
 import PRODUCTS from '@mock/product/products.json';
 import styles from './product.module.scss';
+import Head from 'next/head';
 
 export const getServerSideProps = async ({ query }) => {
     const pid = query.pid;
@@ -27,6 +28,9 @@ const ProductPage = ({product}) => {
 
     return (
         <>
+            <Head>
+                <meta name='description' content={`Next Commerce product page of ${product.name}`}/>
+            </Head>
             <Header/>
             <Minicart/>
             <main className={styles.productPage}>

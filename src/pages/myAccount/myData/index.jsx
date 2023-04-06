@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './myData.module.scss';
+import Head from 'next/head';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -15,6 +16,9 @@ export default function MyAccountPage(){
     const { t } = useTranslation('myData');
     return (
         <>
+            <Head>
+                <meta name='description' content='My Data page of Next Ecommerce here you can see and update your personal data'/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.myDataPage}>
                 <div className='container'>
@@ -22,33 +26,45 @@ export default function MyAccountPage(){
                         <h1>{t('myData.title')}</h1>
                         <form className='form'>
                             <div className='form__field col-6'>
-                                <label>{t('myData.form.firstName')}</label>
-                                <input className='form__input' type="text" data-rule="name"/>
+                                <label htmlFor='firstName'>
+                                    {t('myData.form.firstName')}
+                                    <input name='firstName' className='form__input' type="text" data-rule="name"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-6'>
-                                <label>{t('myData.form.lastName')}</label>
-                                <input className='form__input' type="text"/>
+                                <label htmlFor='lastName'>
+                                    {t('myData.form.lastName')}
+                                    <input name="lastName" className='form__input' type="text"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>{t('myData.form.email')}</label>
-                                <input className='form__input' type="email"/>
+                                <label htmlFor='email'>
+                                    {t('myData.form.email')}
+                                    <input name='email' className='form__input' type="email"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>{t('myData.form.phone')}</label>
-                                <input className='form__input' type="tel"/>
+                                <label htmlFor='phone'>
+                                    {t('myData.form.phone')}
+                                    <input name='phone' className='form__input' type="tel"/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>{t('myData.form.birthday')}</label>
-                                <input className='form__input' type='date'/>
+                                <label htmlFor='birthday'>
+                                    {t('myData.form.birthday')}
+                                    <input name='birthday' className='form__input' type='date'/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
-                                <label>{t('myData.form.password')}</label>
-                                <input className='form__input' type='password'/>
+                                <label htmlFor='password'>
+                                    {t('myData.form.password')}
+                                    <input name='password' className='form__input' type='password'/>
+                                </label>
                                 <span className='form__error'></span>
                             </div>
                             <button className='form__button button button--secondary col-12' type='submit'>{t('myData.form.button')}</button>

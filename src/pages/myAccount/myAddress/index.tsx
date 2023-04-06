@@ -3,10 +3,14 @@ import { IoAddSharp } from 'react-icons/io5';
 import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './myAddress.module.scss';
+import Head from 'next/head';
 
 export default function AddressFormPage(){
     return (
         <>
+            <Head>
+                <meta name='description' content='My Address page of Next Ecommerce here you can manage your addresses to delivery and billing'/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.myAddressPage}>
                 <div className='container'>

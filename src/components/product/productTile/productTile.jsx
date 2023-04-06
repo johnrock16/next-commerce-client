@@ -19,7 +19,7 @@ export default function ProductTile({pid}) {
             </Link>
             <div className={styles.productTile__description}>
                 <Link href={`/product/${id}`}><h3>{name}</h3></Link>
-                <a className={styles.productTile__company} href=''>{seller}</a>
+                <Link className={styles.productTile__company} href={`/company/${id}`}>{seller}</Link>
                 <span className={styles.productTile__priceTotal}>R$ {price.total}</span>
                 <span className={styles.productTile__priceParcel}>em até {price.parcel.times}x de R$ {price.parcel.value} sem juros</span>
             </div>

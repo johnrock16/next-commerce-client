@@ -4,11 +4,15 @@ import ProductCart from '@components/product/productCart/productCart';
 import styles from './checkout.module.scss';
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function CheckoutPage(){
     const cart = useSelector((state) => state.cart);
     return (
         <>
+            <Head>
+                <meta name='description' content='Checkout initial page of Next-Ecommerce in this page user see all products in your cart and can continue your order'/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.checkoutPage}>
                 <div className='container'>

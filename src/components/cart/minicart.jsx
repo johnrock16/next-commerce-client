@@ -33,7 +33,7 @@ export default function Minicart() {
                         <span>R$ 700,00</span>
                     </div>
                     <div className={styles.minicart__action}>
-                        <a className={styles.minicart__title}>{t('minicart.cart')}</a>
+                        <Link href="/checkout" className={styles.minicart__title}>{t('minicart.cart')}</Link>
                     </div>
                 </div>
                 <div className={styles.minicart__body}>

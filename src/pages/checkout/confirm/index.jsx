@@ -3,11 +3,15 @@ import Footer from '@components/footer/footer';
 import styles from './confirm.module.scss';
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function CheckoutConfirmPage() {
     const cart = useSelector((state) => state.cart);
     return (
         <>
+            <Head>
+                <meta name='description' content={`Confirm payment page of Next Commerce`}/>
+            </Head>
             <SimpleHeader/>
             <main className={styles.confirmPage}>
                 <div className='container'>
