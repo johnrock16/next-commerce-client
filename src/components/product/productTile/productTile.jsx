@@ -4,9 +4,11 @@ import { useDispatch } from 'react-redux';
 import { addProduct } from '@store/reducers/cart';
 import PRODUCT from '@mock/product/products.json';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 export default function ProductTile({pid}) {
     const dispatch = useDispatch();
+    const { t } = useTranslation('common')
     const {id, name, seller, price, image} = PRODUCT[pid]
 
     const handleProductAdd = () => {
@@ -24,7 +26,7 @@ export default function ProductTile({pid}) {
                 <span className={styles.productTile__priceParcel}>em até {price.parcel.times}x de R$ {price.parcel.value} sem juros</span>
             </div>
             <div className={styles.productTile__buttonContainer}>
-                <button className="button button--buyTile" onClick={handleProductAdd}>Comprar</button>
+                <button className="button button--buyTile" onClick={handleProductAdd}>{t('button.buy')}</button>
             </div>
         </div>
     )

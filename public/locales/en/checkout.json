@@ -1,0 +1,11 @@
+{
+    "checkout": {
+        "title": "Checkout",
+        "details": "Order details",
+        "itemTotal": "Total items in cart",
+        "priceParcel": "Parcel price",
+        "priceTotal": "Total price",
+        "buttonShipment": "Continue to shipment",
+        "cart": "Products in cart"
+    }
+}

@@ -2,8 +2,18 @@ import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './support.module.scss';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+// @ts-ignore: next-line
+export async function getStaticProps({ locale }) {
+    return {
+      props: {...await serverSideTranslations(locale, ['support'])},
+    }
+}
 
 export default function SupportPage(){
+    const { t } = useTranslation('support');
     return (
         <>
             <Head>
@@ -13,18 +23,18 @@ export default function SupportPage(){
             <main className={styles.supportPage}>
                 <div className='container'>
                     <div className={styles.supportPage__wrapper}>
-                        <h1>Support</h1>
+                        <h1>{t('support.title')}</h1>
                         <form className='form'>
                             <div className='form__field col-12'>
                                 <label htmlFor='orderNumber'>
-                                    Order number
+                                    {t('support.orderNumber')}
                                     <input name='orderNumber' className='form__input' type="text"/>
                                 </label>
                                 <span className='form__error'></span>
                             </div>
                             <div className='form__field col-12'>
                                 <label htmlFor='motive'>
-                                    Select a motive
+                                    {t('support.motive')}
                                     <select name='motive' className='form__input'>
                                         <option>Selecione...</option>
                                         <option>Produto com defeito</option>
@@ -35,12 +45,12 @@ export default function SupportPage(){
                             </div>
                             <div className='form__field col-12'>
                                 <label htmlFor='description'>
-                                    Description
+                                    {t('support.description')}
                                     <textarea name='description' className='form__input'/>
                                 </label>
                                 <span className='form__error'></span>
                             </div>
-                            <button className='form__button button button--secondary col-12' type='submit'>Enviar</button>
+                            <button className='form__button button button--secondary col-12' type='submit'>{t('support.send')}</button>
                         </form>
                     </div>
                 </div>

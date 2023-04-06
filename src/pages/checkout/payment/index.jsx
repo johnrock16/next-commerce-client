@@ -8,12 +8,23 @@ import BoletoForm from '../../../components/payment/forms/boletoForm/boletoForm'
 import DebitForm from '../../../components/payment/forms/debitForm/debitForm';
 import CreditForm from '../../../components/payment/forms/creditForm/creditForm';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {...await serverSideTranslations(locale, ['checkoutPayment','components'])},
+    }
+}
 
 export default function CheckoutPaymentPage(){
     const [selectedPaymentForm, setSelectedPaymentForm] = useState(null);
+    const { t } = useTranslation('checkoutPayment');
+
     const handleSelectPayment = (e) => {
         setSelectedPaymentForm(e.target.value);
     }
+
     return (
         <>
             <Head>
@@ -23,26 +34,26 @@ export default function CheckoutPaymentPage(){
             <main className={styles.paymentPage}>
                 <div className='container'>
                     <div className={styles.paymentPage__wrapper}>
-                        <h1>Payment</h1>
+                        <h1>{t('checkoutPayment.title')}</h1>
                         <div className={styles.paymentPage__details}>
-                            <h2>Escolha um metodo de pagamento</h2>
+                            <h2>{t('checkoutPayment.paymentMethod')}</h2>
                             <div className={styles.paymentPage__box} onChange={handleSelectPayment}>
                                 <div className='radioField'>
-                                    <label htmlFor='boleto'>
+                                    <label htmlFor='address'>
                                         Boleto
-                                        <input name="boleto" type="radio" value="boleto"/>
+                                        <input name="address" type="radio" value="boleto"/>
                                     </label>
                                 </div>
                                 <div className='radioField'>
-                                    <label htmlFor='debit'>
+                                    <label htmlFor='address'>
                                         Cartão de debito
-                                        <input name="debit" type="radio" value="debit"/>
+                                        <input name="address" type="radio" value="debit"/>
                                     </label>
                                 </div>
                                 <div className='radioField'>
-                                    <label htmlFor='credit'>
+                                    <label htmlFor='address'>
                                         Cartão de crédito
-                                        <input name="credit" type="radio" value="credit"/>
+                                        <input name="address" type="radio" value="credit"/>
                                     </label>
                                 </div>
                             </div>
@@ -51,19 +62,19 @@ export default function CheckoutPaymentPage(){
                             (selectedPaymentForm) ?
                                 (selectedPaymentForm === 'boleto') ?
                                     <div className={styles.paymentPage__formWrapper}>
-                                        <span>Formulário de Pagamento</span>
+                                        <span>{t('checkoutPayment.paymentForm')}</span>
                                         <BoletoForm/>
                                     </div>
                                 :
                                 (selectedPaymentForm === 'debit') ?
                                     <div className={styles.paymentPage__formWrapper}>
-                                        <span>Formulário de Pagamento</span>
+                                        <span>{t('checkoutPayment.paymentForm')}</span>
                                         <DebitForm/>
                                     </div>
                                 :
                                 (selectedPaymentForm === 'credit') ?
                                     <div className={styles.paymentPage__formWrapper}>
-                                        <span>Formulário de Pagamento</span>
+                                        <span>{t('checkoutPayment.paymentForm')}</span>
                                         <CreditForm/>
                                     </div>
                                 : null
@@ -71,11 +82,11 @@ export default function CheckoutPaymentPage(){
 
                         }
                         <div className={styles.paymentPage__details}>
-                            <h2>Escolha um endereço de pagamento</h2>
+                            <h2>{t('checkoutPayment.addressBilling')}</h2>
                             <div className={styles.paymentPage__box}>
                                 <Link href='/myAccount/myAddress/form' className={styles.paymentPage__add}>
                                     <IoAddSharp/>
-                                    <span>Adicionar Endereço</span>
+                                    <span>{t('checkoutPayment.addressAdd')}</span>
                                 </Link>
                                 <div className='radioField'>
                                     <label htmlFor='house'>
@@ -92,7 +103,7 @@ export default function CheckoutPaymentPage(){
                             </div>
                         </div>
                         <Link href='/checkout/confirm' className={styles.checkoutPage__boxBottom}>
-                            <button className='button button--secondary'>Finalizar compra</button>
+                            <button className='button button--secondary'>{t('checkoutPayment.buttonBuy')}</button>
                         </Link>
                     </div>
                 </div>

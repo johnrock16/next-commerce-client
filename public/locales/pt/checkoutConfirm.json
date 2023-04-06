@@ -1,0 +1,8 @@
+{
+    "checkoutConfirm": {
+        "title": "Pagamento confirmado",
+        "success": "Comprado com sucesso",
+        "paymentItems": "Seu pagamento foi concluído com sucesso dos seguintes itens: ",
+        "buttonHome": "Voltar para a página inicial"
+    }
+}

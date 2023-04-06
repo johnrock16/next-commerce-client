@@ -12,7 +12,7 @@ import Head from 'next/head';
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
   return {
-    props: {...await serverSideTranslations(locale, ['components'])},
+    props: {...await serverSideTranslations(locale, ['components', 'common'])},
   }
 }
 

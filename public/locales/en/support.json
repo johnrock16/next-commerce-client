@@ -1,0 +1,9 @@
+{
+    "support": {
+        "title": "Support",
+        "orderNumber": "Order number",
+        "motive": "Select a motive",
+        "description": "Description",
+        "send": "Send"
+    }
+}

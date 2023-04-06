@@ -1,0 +1,29 @@
+{
+    "myAccount": {
+        "title": "Minha conta",
+        "myData": {
+            "title": "Meus dados",
+            "description": "Gerencie seus dados pessoais"
+        },
+        "myOrders": {
+            "title": "Meus pedidos",
+            "description": "Gerencie seus pedidos"
+        },
+        "myFavorites": {
+            "title": "Meus favoritos",
+            "description": "Gerencie seus favoritos"
+        },
+        "myAddress": {
+            "title": "Meus endereços",
+            "description": "Gerencie seus endereços"
+        },
+        "myCards": {
+            "title": "Meus cartões",
+            "description": "Gerencie seus cartões"
+        },
+        "support": {
+            "title": "Suporte",
+            "description": "Precisa de ajuda?"
+        }
+    }
+}

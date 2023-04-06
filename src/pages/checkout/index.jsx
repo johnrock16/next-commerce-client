@@ -5,9 +5,18 @@ import styles from './checkout.module.scss';
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+export async function getStaticProps({ locale }) {
+    return {
+      props: {...await serverSideTranslations(locale, ['checkout','components'])},
+    }
+}
 
 export default function CheckoutPage(){
     const cart = useSelector((state) => state.cart);
+    const { t } = useTranslation('checkout');
     return (
         <>
             <Head>
@@ -17,20 +26,20 @@ export default function CheckoutPage(){
             <main className={styles.checkoutPage}>
                 <div className='container'>
                     <div className={styles.checkoutPage__wrapper}>
-                        <h1>Checkout</h1>
+                        <h1>{t('checkout.title')}</h1>
                         <div className={styles.checkoutPage__details}>
-                            <h2>Detalhes da compra</h2>
+                            <h2>{t('checkout.details')}</h2>
                             <div className={styles.checkoutPage__box}>
-                                <span><strong>Total de itens no carrinho:</strong> x{cart.length}</span>
-                                <span><strong>Valor parcelado:</strong> x10 de R$70,00</span>
-                                <span><strong>Preço total:</strong> R$700,00</span>
+                                <span><strong>{t('checkout.itemTotal')}:</strong> x{cart.length}</span>
+                                <span><strong>{t('checkout.priceParcel')}:</strong> x10 de R$70,00</span>
+                                <span><strong>{t('checkout.priceTotal')}:</strong> R$700,00</span>
                                 <Link href='/checkout/shipping' className={styles.checkoutPage__boxBottom}>
-                                    <button className='button button--secondary'>Continuar para entrega</button>
+                                    <button className='button button--secondary'>{t('checkout.buttonShipment')}</button>
                                 </Link>
                             </div>
                         </div>
                         <div className={styles.checkoutPage__listProducts}>
-                            <h2>Produtos no carrinho:</h2>
+                            <h2>{t('checkout.cart')}:</h2>
                             <div className={styles.checkoutPage__products}>
                             {
                                 Object.keys(cart.items).map((key) => (

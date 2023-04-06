@@ -1,0 +1,11 @@
+{
+    "checkout": {
+        "title": "Checkout",
+        "details": "Detalhes da compra",
+        "itemTotal": "Total de itens no carrinho",
+        "priceParcel": "Valor parcelado",
+        "priceTotal": "Preço total",
+        "buttonShipment": "Continuar para entrega",
+        "cart": "Produtos no carrinho"
+    }
+}

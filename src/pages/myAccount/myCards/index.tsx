@@ -4,8 +4,18 @@ import SimpleHeader from '@components/header/simpleHeader';
 import Footer from '@components/footer/footer';
 import styles from './myCards.module.scss';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+// @ts-ignore: next-line
+export async function getStaticProps({ locale }) {
+    return {
+      props: {...await serverSideTranslations(locale, ['myCards', 'common'])},
+    }
+}
 
 export default function AddressFormPage(){
+    const { t } = useTranslation(['myCards', 'common'])
     return (
         <>
             <Head>
@@ -15,11 +25,11 @@ export default function AddressFormPage(){
             <main className={styles.myCardsPage}>
                 <div className='container'>
                     <div className={styles.myCardsPage__wrapper}>
-                        <h1>Meus cartões</h1>
+                        <h1>{t('myCards.title')}</h1>
                         <div className={styles.myCardsPage__addresses}>
                             <Link href='/myAccount/myCards/form' className={styles['myCardsPage__address--add']}>
                                 <IoAddSharp/>
-                                <h2>Adicionar Cartão</h2>
+                                <h2>{t('myCards.cardAdd')}</h2>
                             </Link>
                             <div className={styles.myCardsPage__address}>
                                 <h2>Banco Bacana Diamond GoodCard</h2>
@@ -29,8 +39,8 @@ export default function AddressFormPage(){
                                     <li><span>Jomes Jareg</span></li>
                                 </ul>
                                 <div className={styles.myCardsPage__addressButtons}>
-                                    <Link href='/myAccount/myCards/form'>Alterar</Link>
-                                    <Link href='/myAccount/myCards/form'>Excluir</Link>
+                                    <Link href='/myAccount/myCards/form'>{t('button.update', {ns:'common'})}</Link>
+                                    <Link href='/myAccount/myCards/form'>{t('button.delete', {ns:'common'})}</Link>
                                 </div>
                             </div>
                             <div className={styles.myCardsPage__address}>
@@ -41,8 +51,8 @@ export default function AddressFormPage(){
                                     <li><span>Jomes Jareg</span></li>
                                 </ul>
                                 <div className={styles.myCardsPage__addressButtons}>
-                                    <Link href='/myAccount/myCards/form'>Alterar</Link>
-                                    <Link href='/myAccount/myCards/form'>Excluir</Link>
+                                    <Link href='/myAccount/myCards/form'>{t('button.update', {ns:'common'})}</Link>
+                                    <Link href='/myAccount/myCards/form'>{t('button.delete', {ns:'common'})}</Link>
                                 </div>
                             </div>
                             <div className={styles.myCardsPage__address}>
@@ -53,8 +63,8 @@ export default function AddressFormPage(){
                                     <li><span>Jomes Jareg</span></li>
                                 </ul>
                                 <div className={styles.myCardsPage__addressButtons}>
-                                    <Link href='/myAccount/myCards/form'>Alterar</Link>
-                                    <Link href='/myAccount/myCards/form'>Excluir</Link>
+                                    <Link href='/myAccount/myCards/form'>{t('button.update', {ns:'common'})}</Link>
+                                    <Link href='/myAccount/myCards/form'>{t('button.delete', {ns:'common'})}</Link>
                                 </div>
                             </div>
                         </div>

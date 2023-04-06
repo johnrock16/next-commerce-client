@@ -1,0 +1,16 @@
+{
+    "myAddressForm": {
+        "title": "Register your address",
+        "form": {
+            "name": "Address name",
+            "zipcode": "Zipcode",
+            "street": "Street",
+            "number": "Number",
+            "district": "District",
+            "city": "City",
+            "state": "State",
+            "country": "Country",
+            "buttonRegister": "Register"
+        }
+    }
+}

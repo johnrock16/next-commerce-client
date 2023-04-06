@@ -1,0 +1,13 @@
+{
+    "myCardsForm": {
+        "title": "Register your card",
+        "form": {
+            "fullName": "Full name",
+            "numberCard": "Card number",
+            "typeCard": "Card type",
+            "validateCard": "Validate date",
+            "cardCVV": "CVV",
+            "buttonRegister": "Register"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "checkoutShipping": {
+        "title": "Entrega",
+        "addressChoose": "Escolha um endereço de entrega",
+        "addressAdd": "Adicionar endereço",
+        "addressDeliver": "Escolha um serviço de entrega",
+        "buttonPayment": "Continuar para pagamento"
+    }
+}

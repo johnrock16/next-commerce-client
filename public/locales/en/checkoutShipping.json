@@ -1,0 +1,9 @@
+{
+    "checkoutShipping": {
+        "title": "Shipping",
+        "addressChoose": "Choose a shipping address",
+        "addressAdd": "Add address",
+        "addressDeliver": "Choose a shipping service",
+        "buttonPayment": "Continue to payment"
+    }
+}
