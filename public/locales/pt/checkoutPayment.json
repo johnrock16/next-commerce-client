@@ -1,0 +1,10 @@
+{
+    "checkoutPayment": {
+        "title": "Formas de pagamento",
+        "paymentMethod": "Escolha um método de pagamento",
+        "paymentForm": "Formulário de pagamento",
+        "addressBilling": "Escolha um endereço de pagamento",
+        "addressAdd": "Adicionar endereço",
+        "buttonBuy": "Finalizar compra"
+    }
+}

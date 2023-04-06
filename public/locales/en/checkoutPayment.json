@@ -1,0 +1,10 @@
+{
+    "checkoutPayment": {
+        "title": "Payment",
+        "paymentMethod": "Choose a payment method",
+        "paymentForm": "Payment form",
+        "addressBilling": "Choose a billing address",
+        "addressAdd": "Add an address",
+        "buttonBuy": "Finish order"
+    }
+}

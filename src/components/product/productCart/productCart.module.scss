@@ -1,0 +1,22 @@
+@import '../../../styles/source/core.scss';
+
+.productCart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gutter;
+    // padding-bottom: $gutter * 2;
+    border-bottom: 1px solid $black;
+
+    img {
+        background-color: lightgray;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 200px;
+        // padding: $gutter;
+        padding-bottom: $gutter;
+    }
+}

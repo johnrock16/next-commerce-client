@@ -20,6 +20,15 @@
         z-index: 2;
     }
 
+
+    &__checkout {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 80vw;
+        max-width: 400px;
+    }
+
     &__top {
         display: flex;
         flex-direction: column;
@@ -30,16 +39,21 @@
     }
 
 
-    &__profile {
+    &__total {
         display: flex;
         align-self: flex-end;
         gap: $gutter;
-        @include fontSize(2.4);
 
         span {
-            display: flex;
-            align-items: flex-end;
+            @include fontSize(1.6);
+            font-weight: $bold;
         }
+    }
+
+    &__action {
+        display: flex;
+        align-items: flex-end;
+        gap: $gutter * 4;
     }
 
     &__title {
@@ -47,12 +61,15 @@
         font-weight: $medium;
     }
 
+    &__body {
+        position: relative;
+    }
+
     &__items {
         display: flex;
         flex-direction: column;
-        padding: $gutter * 2;
-        gap: $gutter * 3;
-        border-bottom: 1px solid $black;
+        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
+        gap: $gutter * 2;
 
         &:last-child {
             border-bottom: none;
@@ -82,8 +99,8 @@
         > div {
             display: flex;
             flex-direction: column;
+            flex: 1;
             min-width: 200px;
-            max-width: 50%;
         }
     }
 }

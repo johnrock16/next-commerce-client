@@ -1,0 +1,29 @@
+{
+    "myAccount": {
+        "title": "My account",
+        "myData": {
+            "title": "My data",
+            "description": "Manage your personal data"
+        },
+        "myOrders": {
+            "title": "My orders",
+            "description": "Manage your orders"
+        },
+        "myFavorites": {
+            "title": "My favorites",
+            "description": "Manage your favorites products"
+        },
+        "myAddress": {
+            "title": "My address",
+            "description": "Manage your address"
+        },
+        "myCards": {
+            "title": "My cards",
+            "description": "Manage your cards"
+        },
+        "support": {
+            "title": "Support",
+            "description": "Need a help?"
+        }
+    }
+}

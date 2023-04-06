@@ -1,0 +1,18 @@
+{
+    "myData": {
+        "title": "Meus Dados",
+        "form": {
+            "firstName": "Nome",
+            "lastName": "Sobrenome",
+            "email": "Email",
+            "phone": "Telefone",
+            "birthday": "Data de Nascimento",
+            "password": "Senha",
+            "button": "Atualize"
+        },
+        "login": {
+            "text": "ou se você já possui uma conta ",
+            "login": "login"
+        }
+    }
+}

@@ -6,9 +6,9 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className={styles.footer__links}>
                 <Link href='/institutional/about'>Sobre nós</Link>
-                <a>Termos de Uso</a>
-                <a>Politica de Privacidade</a>
-                <a>FAQ</a>
+                <Link href='/institutional/termsUse'>Termos de Uso</Link>
+                <Link href='/institutional/privacyPolicy'>Politica de Privacidade</Link>
+                <Link href='/institutional/faq'>FAQ</Link>
             </div>
         </footer>
     );

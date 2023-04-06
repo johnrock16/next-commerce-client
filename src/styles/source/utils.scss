@@ -32,16 +32,17 @@ body {
     margin: 0 auto;
 }
 
+.textAcessibility {
+    position: absolute;
+    z-index: -99;
+}
+
 h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
 p, span, a, label {
     @include fontSize(1.4);
-}
-
-input {
-    min-height: 32px;
 }
 
 a {
@@ -69,13 +70,6 @@ span, p {
     }
     &--bottom {
         border-bottom: 1px solid $borderPrimary;
-    }
-}
-
-.select {
-    &--text {
-        padding: 0;
-        width: min-content;
     }
 }
 

@@ -24,6 +24,13 @@
         cursor: pointer;
     }
 
+    &--iconText {
+        gap: $gutter;
+        color: $black;
+        background: none;
+        border: 1px solid $black;
+    }
+
     &--icon {
         @include fontSize(2.4);
         background: none;

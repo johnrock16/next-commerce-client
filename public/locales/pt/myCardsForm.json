@@ -1,0 +1,13 @@
+{
+    "myCardsForm": {
+        "title": "Cadastre seu cartão",
+        "form": {
+            "fullName": "Nome completo",
+            "numberCard": "Número do cartão",
+            "typeCard": "Tipo de cartão",
+            "validateCard": "Data de validade",
+            "cardCVV": "CVV",
+            "buttonRegister": "Cadastrar"
+        }
+    }
+}

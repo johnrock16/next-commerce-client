@@ -13,12 +13,31 @@ textarea {
 }
 
 .input {
+    min-height: 32px;
+
     &--transparent {
         background-color: transparent;
         border: 1px solid $white;
     }
 }
 
+input[type="radio"] {
+    width: auto;
+    height: auto;
+    min-width: 20px;
+}
+
 label.required::after {
     content: " *";
+}
+
+.radioField {
+    label {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        width: auto;
+        align-items: center;
+        gap: 4px;
+    }
 }

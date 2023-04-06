@@ -1,0 +1,9 @@
+{
+    "support": {
+        "title": "Suporte",
+        "orderNumber": "Número do seu pedido",
+        "motive": "Selecione um motivo",
+        "description": "Descrição",
+        "send": "Enviar"
+    }
+}

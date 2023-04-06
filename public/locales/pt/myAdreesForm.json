@@ -1,0 +1,16 @@
+{
+    "myAddressForm": {
+        "title": "Cadastre seu endereço",
+        "form": {
+            "name": "Nome do seu endereço",
+            "zipcode": "CEP",
+            "street": "Rua",
+            "number": "Número",
+            "district": "Bairro",
+            "city": "Cidade",
+            "state": "Estado",
+            "country": "Pais",
+            "buttonRegister": "Cadastrar"
+        }
+    }
+}
