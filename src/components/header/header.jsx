@@ -36,9 +36,11 @@ export default function Header() {
               <div className={styles.header__search}>
                 <div></div>
                   <input name="search" type="text" placeholder='Search your product here'/>
-                  <button className="button--icon" aria-label="button to search products">
-                      <IoSearchSharp className={styles.header__icon}/>
-                  </button>
+                  <Link href='/search'>
+                    <button className="button--icon" aria-label="button to search products">
+                        <IoSearchSharp className={styles.header__icon}/>
+                    </button>
+                  </Link>
               </div>
             </div>
             <div className={styles.header__categories}>
