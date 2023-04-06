@@ -30,7 +30,7 @@ export default function MySearchPage(){
                         <h1>{t('search.title')}</h1>
                         <div className={styles.searchPage__options}>
                             <div className={styles.searchPage__option}>
-                                <button className='button button--iconText'><IoOptionsSharp/>{t('search.filters')}</button>
+                                <button className='button button--iconText'><IoOptionsSharp/>{t('search.buttonFilters')}</button>
                             </div>
                         </div>
                         <div>
