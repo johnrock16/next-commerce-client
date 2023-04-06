@@ -1,0 +1,14 @@
+@import '../../styles/source/core.scss';
+
+.categoryPage {
+    h1 {
+        @include fontSize(2.4);
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        padding: $gutter * 2;
+        gap: $gutter * 2;
+    }
+}

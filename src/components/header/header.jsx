@@ -44,9 +44,9 @@ export default function Header() {
               </div>
             </div>
             <div className={styles.header__categories}>
-              <Link className={styles.header__category} href="/category">Category</Link>
-              <Link className={styles.header__category} href="/category">Category</Link>
-              <Link className={styles.header__category} href="/category">Category</Link>
+              <Link className={styles.header__category} href="/category/smartphone">Smartphones</Link>
+              <Link className={styles.header__category} href="/category/smartphone">Smartphones</Link>
+              <Link className={styles.header__category} href="/category/smartphone">Smartphones</Link>
             </div>
           </div>
         </div>
