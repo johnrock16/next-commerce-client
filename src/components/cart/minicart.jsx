@@ -27,7 +27,7 @@ export default function Minicart() {
 
     return (
         ((open && cart.items) ? <div className={styles.minicart} onClick={()=>{handleOpen(false)}}>
-            <div className={styles.minicart__wrapper}>
+            <div className={styles.minicart__wrapper} onClick={(e)=>{e.stopPropagation();}}>
                 <div className={styles.minicart__top}>
                     <div className={styles.minicart__total}>
                         <span>R$ 700,00</span>

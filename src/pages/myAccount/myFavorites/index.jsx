@@ -6,6 +6,7 @@ import styles from './myFavorites.module.scss';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import { useSelector } from 'react-redux';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -14,7 +15,8 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function MyFavoritePage(){
-    const { t } = useTranslation('myFavorites')
+    const { t } = useTranslation('myFavorites');
+    const favoriteProducts = useSelector((state) => state.user.favorite);
     return (
         <>
             <Head>
@@ -27,11 +29,13 @@ export default function MyFavoritePage(){
                         <h1>{t('myFavorites.title')}</h1>
                         <h2>{t('myFavorites.products')}</h2>
                         <div className={styles.myFavoritesPage__products}>
-                            <ProductTile pid="ps4ctrl"/>
-                            <ProductTile pid="ns2017"/>
-                            <ProductTile pid="smphone"/>
-                            <ProductTile pid="smphone"/>
-                            <ProductTile pid="smphone"/>
+                            {
+                                (favoriteProducts && Object.keys(favoriteProducts).length > 0) ?
+                                    Object.keys(favoriteProducts).map((favoriteProduct, index) => (
+                                        <ProductTile key={`favoriteProduct-${index}`} pid={favoriteProduct}/>
+                                    ))
+                                : null
+                            }
                         </div>
                     </div>
                 </div>

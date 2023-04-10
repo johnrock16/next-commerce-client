@@ -1,16 +1,19 @@
 import Image from 'next/image';
 import styles from './productTile.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct, addFavorite, removeFavorite } from '@store/reducers/cart';
+import { addProduct } from '@store/reducers/cart';
+import { addFavorite, removeFavorite } from '@store/reducers/user';
 import PRODUCT from '@mock/product/products.json';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import ButtonFavorite from '@components/button/buttonFavorite/buttonFavorite';
+import ProductCount from '../productCount/productCount';
 
 export default function ProductTile({pid}) {
     const dispatch = useDispatch();
     const { t } = useTranslation('common');
-    const isFavorite = useSelector((state) => state.cart.favorite[pid]);
+    const isFavorite = useSelector((state) => state.user.favorite[pid]);
+    const cart = useSelector((state) => state.cart);
     const {id, name, seller, price, image} = PRODUCT[pid];
 
     const handleProductAdd = () => {
@@ -42,7 +45,11 @@ export default function ProductTile({pid}) {
                 <span className={styles.productTile__priceParcel}>em até {price.parcel.times}x de R$ {price.parcel.value} sem juros</span>
             </div>
             <div className={styles.productTile__buttonContainer}>
-                <button className="button button--buyTile" onClick={handleProductAdd}>{t('button.buy')}</button>
+                {
+                    (cart && cart.items[pid]?.count > 0)
+                    ? <ProductCount pid={id} count={cart.items[pid].count}/>
+                    : <button className="button button--buyTile" onClick={handleProductAdd}>{t('button.buy')}</button>
+                 }
             </div>
         </div>
     )

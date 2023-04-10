@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { createWrapper } from 'next-redux-wrapper';
 import cartReducer from './reducers/cart';
+import userReducer from './reducers/user';
 
 const reducer = {
-  cart: cartReducer
+  cart: cartReducer,
+  user: userReducer
 }
 
 let store = configureStore({

@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: {},
@@ -11,32 +11,31 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action) => {
-      const {id, count, name, price, seller, image } = action.payload;
-      const items = {...state.items, [id]:{id, count, name, price, seller, image}};
-
+      const {id, name, price, seller, image } = action.payload;
+      const items = (state.items[id]) ? {...state.items, [id]:{...state.items[id], count: state.items[id].count + 1}} : {...state.items, [id]:{id, count: 1, name, price, seller, image}};
       const eventMinicartOpen = new CustomEvent('minicart/open');
-      window.dispatchEvent(eventMinicartOpen);
 
+      window.dispatchEvent(eventMinicartOpen);
       return {
         ...state,
         items,
-        length: Object.keys(items).length
+        length: Object.keys(state.items).length
       };
     },
-    addFavorite: (state, action) => {
-      const {pid} = action.payload;
+    calculateCount: (state, action) => {
+      const {id, quantity} = action.payload;
+      const items = (state.items[id]) ? {...state.items, [id]:{...state.items[id], count: state.items[id].count + quantity}} : null;
+      if (!items[id]?.count) {
+        delete items[id];
+      }
       return {
         ...state,
-        favorite: {...state.favorite, [pid]:  pid}
-      }
-    },
-    removeFavorite: (state, action) => {
-      const {pid} = action.payload;
-      delete state.favorite[pid];
-      return state;
+        items,
+        length: Object.keys(state.items).length
+      };
     }
   },
 });
 
-export const { addProduct, addFavorite, removeFavorite, removeProduct, setCount } = cartSlice.actions;
+export const { addProduct, calculateCount } = cartSlice.actions;
 export default cartSlice.reducer;

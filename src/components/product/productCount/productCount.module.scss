@@ -1,0 +1,28 @@
+@import '../../../styles/source/core.scss';
+
+.productCount {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: max-content;
+
+    input {
+        height: 46px;
+        text-align: center;
+    }
+
+    button {
+        position: absolute;
+        width: auto;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+        &:last-child {
+            right: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+    }
+}
