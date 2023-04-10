@@ -3,7 +3,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: $gutter * 2;
+    min-width: 48px;
+    min-height: 48px;
     @include fontSize(1.4);
     font-weight: $bold;
     color: $white;
@@ -18,7 +19,6 @@
     }
 
     &--transparent {
-        padding: 0;
         background: none;
         border: none;
         cursor: pointer;
@@ -32,6 +32,8 @@
     }
 
     &--icon {
+        width: auto;
+        padding: 0;
         @include fontSize(2.4);
         background: none;
         border: none;

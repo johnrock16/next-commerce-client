@@ -83,7 +83,6 @@ export default function CompanyPage({category}) {
           <Card>
             <TileSquare/>
           </Card>
-
           <Card>
             <div className='grid--card'>
               <TileSquare/>

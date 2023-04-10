@@ -1,21 +1,37 @@
 import Image from 'next/image';
 import styles from './productTile.module.scss';
-import { useDispatch } from 'react-redux';
-import { addProduct } from '@store/reducers/cart';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProduct, addFavorite, removeFavorite } from '@store/reducers/cart';
 import PRODUCT from '@mock/product/products.json';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
+import ButtonFavorite from '@components/button/buttonFavorite/buttonFavorite';
 
 export default function ProductTile({pid}) {
     const dispatch = useDispatch();
-    const { t } = useTranslation('common')
-    const {id, name, seller, price, image} = PRODUCT[pid]
+    const { t } = useTranslation('common');
+    const isFavorite = useSelector((state) => state.cart.favorite[pid]);
+    const {id, name, seller, price, image} = PRODUCT[pid];
 
     const handleProductAdd = () => {
         dispatch(addProduct(PRODUCT[id]));
     }
-    return(
+
+    const handleFavorite = ([isFavorite, setFavorite]) => {
+        if(!isFavorite) {
+            dispatch(addFavorite({pid}));
+        }
+        else {
+            dispatch(removeFavorite({pid}));
+        }
+        setFavorite(!isFavorite);
+    }
+
+    return (
         <div className={styles.productTile}>
+            <div className={styles.productTile__favorite}>
+                <ButtonFavorite className="button button--icon" onClick={handleFavorite} favorited={isFavorite}/>
+            </div>
             <Link href={`/product/${id}`}>
                 <Image src={image.src} alt='next logo' width={200} height={200} loading='lazy'/>
             </Link>

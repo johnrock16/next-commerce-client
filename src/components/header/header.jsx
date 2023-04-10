@@ -19,25 +19,25 @@ export default function Header() {
         <div className='container'>
           <div className={styles.header__wrapper}>
             <div className={styles.header__top}>
-              <button className="button--icon" onClick={()=>{handleMenu(true)}} aria-label="Category Menu open button">
+              <button className="button button--icon" onClick={()=>{handleMenu(true)}} aria-label="Category Menu open button">
                 <IoMenuOutline className={styles.header__icon}/>
               </button>
               <Link href='/' aria-label='Button to go back to the homepage'>
                 <Image src="/next.svg" width={80} height={80} alt="Logo of nc commerce" loading='lazy'/>
               </Link>
-              <div>
-                  <Link href='/login' className="button--icon" aria-label='Button to Login screen'>
-                    <IoPersonOutline className={styles.header__icon}/>
-                  </Link>
-                  <button className="button--icon" onClick={handleMiniCart} aria-label="Minicart Menu open button">
-                    <IoCartOutline className={styles.header__icon}/>
-                  </button>
+              <div className='row'>
+                <Link href='/login' className="button button--icon" aria-label='Button to Login screen'>
+                  <IoPersonOutline className={styles.header__icon}/>
+                </Link>
+                <button className="button button--icon" onClick={handleMiniCart} aria-label="Minicart Menu open button">
+                  <IoCartOutline className={styles.header__icon}/>
+                </button>
               </div>
               <div className={styles.header__search}>
                 <div></div>
                   <input name="search" type="text" placeholder='Search your product here'/>
                   <Link href='/search'>
-                    <button className="button--icon" aria-label="button to search products">
+                    <button className="button button--icon" aria-label="button to search products">
                         <IoSearchSharp className={styles.header__icon}/>
                     </button>
                   </Link>

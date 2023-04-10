@@ -16,6 +16,12 @@
         color: $black;
     }
 
+    &__favorite {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
     &__description {
         display: flex;
         flex-direction: column;
@@ -23,7 +29,8 @@
         gap: $gutter;
     }
 
-    &__company{
+    &__company {
+        margin-top: $gutter;
         font-weight: $medium;
     }
 
