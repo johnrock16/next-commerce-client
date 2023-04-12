@@ -30,7 +30,7 @@ export default function Minicart() {
             <div className={styles.minicart__wrapper} onClick={(e)=>{e.stopPropagation();}}>
                 <div className={styles.minicart__top}>
                     <div className={styles.minicart__total}>
-                        <span>R$ 700,00</span>
+                        <span>R$ {cart.price.total}</span>
                     </div>
                     <div className={styles.minicart__action}>
                         <Link href="/checkout" className={styles.minicart__title}>{t('minicart.cart')}</Link>

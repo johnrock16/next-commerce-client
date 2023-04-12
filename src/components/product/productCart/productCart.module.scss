@@ -4,19 +4,51 @@
     display: flex;
     flex-wrap: wrap;
     gap: $gutter;
-    // padding-bottom: $gutter * 2;
     border-bottom: 1px solid $black;
 
     img {
+        height: 100%;
         background-color: lightgray;
     }
 
-    > div {
+    &__description {
         display: flex;
         flex-direction: column;
         flex: 1;
+        gap: $gutter;
         min-width: 200px;
-        // padding: $gutter;
+        max-width: 300px;
         padding-bottom: $gutter;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter;
+    }
+
+    &__title {
+        @include fontSize(1.6);
+        color: $black;
+        font-weight: $bold;
+    }
+
+    &__company {
+        font-weight: $medium;
+    }
+
+    &__prices {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: $gutter;
+
+        span {
+            @include fontSize(1.6);
+
+            &:first-child {
+                @include fontSize(2.0);
+                font-weight: $bold;
+            }
+        }
     }
 }

@@ -42,15 +42,19 @@ export default function ProductTile({pid}) {
                 <Link href={`/product/${id}`}><h3>{name}</h3></Link>
                 <Link className={styles.productTile__company} href={`/company/vid`}>{seller}</Link>
                 <span className={styles.productTile__priceTotal}>R$ {price.total}</span>
-                <span className={styles.productTile__priceParcel}>em até {price.parcel.times}x de R$ {price.parcel.value} sem juros</span>
+                <span className={styles.productTile__priceParcel}>em até {price.parcel.times}x de R$ {(price.total / price.parcel.times).toFixed(2)} sem juros</span>
             </div>
-            <div className={styles.productTile__buttonContainer}>
-                {
-                    (cart && cart.items[pid]?.count > 0)
-                    ? <ProductCount pid={id} count={cart.items[pid].count}/>
-                    : <button className="button button--buyTile" onClick={handleProductAdd}>{t('button.buy')}</button>
-                 }
-            </div>
+            {
+            (cart && cart.items[pid]?.count > 0)
+            ?
+                <div className={styles.productTile__buttonCountContainer}>
+                    <ProductCount pid={id} count={cart.items[pid].count}/>
+                </div>
+            :
+                <div className={styles.productTile__buttonContainer}>
+                    <button className="button button--buyTile" onClick={handleProductAdd}>{t('button.buy')}</button>
+                </div>
+            }
         </div>
     )
 }

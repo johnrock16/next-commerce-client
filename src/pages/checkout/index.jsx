@@ -31,8 +31,8 @@ export default function CheckoutPage(){
                             <h2>{t('checkout.details')}</h2>
                             <div className={styles.checkoutPage__box}>
                                 <span><strong>{t('checkout.itemTotal')}:</strong> x{cart.length}</span>
-                                <span><strong>{t('checkout.priceParcel')}:</strong> x10 de R$70,00</span>
-                                <span><strong>{t('checkout.priceTotal')}:</strong> R$700,00</span>
+                                <span><strong>{t('checkout.priceParcel')}:</strong> x{cart.price.parcel.times[0]} de R${cart.price.parcel.value}</span>
+                                <span><strong>{t('checkout.priceTotal')}:</strong> R${cart.price.total}</span>
                                 <Link href='/checkout/shipping' className={styles.checkoutPage__boxBottom}>
                                     <button className='button button--secondary'>{t('checkout.buttonShipment')}</button>
                                 </Link>

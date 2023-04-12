@@ -5,10 +5,10 @@
         "seller": "Video games & store",
         "count": 1,
         "price":{
-            "total": 2291.00,
+            "total": 1000.00,
             "parcel":{
-                "times": 10,
-                "value": 229.18
+                "times": 3,
+                "value": 0
             }
         },
         "image":{
@@ -22,7 +22,7 @@
         "seller": "Ziztendo",
         "count": 1,
         "price":{
-            "total": 2291.00,
+            "total": 2000.00,
             "parcel":{
                 "times": 10,
                 "value": 229.18
@@ -39,7 +39,7 @@
         "seller": "Smart phones",
         "count": 1,
         "price":{
-            "total": 2291.00,
+            "total": 1500.00,
             "parcel":{
                 "times": 10,
                 "value": 229.18

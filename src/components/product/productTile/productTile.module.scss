@@ -43,7 +43,8 @@
         @include fontSize(1.4);
     }
 
-    &__buttonContainer {
+    &__buttonContainer,
+    &__buttonCountContainer {
         display: flex;
         justify-self: flex-end;
         height: 100%;
@@ -52,5 +53,9 @@
         > button {
             align-self: flex-end;
         }
+    }
+
+    &__buttonCountContainer {
+        align-self: center;
     }
 }

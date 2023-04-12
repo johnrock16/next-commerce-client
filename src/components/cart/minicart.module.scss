@@ -74,15 +74,6 @@
         &:last-child {
             border-bottom: none;
         }
-
-        span {
-            @include fontSize(1.6);
-
-            &:first-child {
-                @include fontSize(2.0);
-                font-weight: $bold;
-            }
-        }
     }
 
     &__item {
