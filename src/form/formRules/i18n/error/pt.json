@@ -1,7 +1,8 @@
 {
     "common": {
         "hasText": "Por favor, preencha o campo",
-        "dateFormat": "Por favor, preencha o campo com um formato de data válida"
+        "dateFormat": "Por favor, preencha o campo com um formato de data válida",
+        "dateFuture": "Por favor, selecione uma data no futuro"
     },
     "email": {
         "regex": "Por favor, preencha o campo com um formato de email válido"
@@ -32,5 +33,9 @@
     },
     "zipcode": {
         "regex": "Por favor, preencha o campo com um fomrato de CEP valido"
+    },
+    "cvv": {
+        "minLength": "Por favor, digite um CVV que tenha no minimo 3 caracteres",
+        "maxLength": "Por favor, digite um CVV que tenha no máximo 4 caracteres"
     }
 }

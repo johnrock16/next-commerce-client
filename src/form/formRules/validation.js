@@ -1,4 +1,4 @@
-import { calculateAge, isValidDate, validateCPF } from "./util";
+import { calculateAge, isValidDate, validateCPF, validateDateMonthYear } from "./util";
 
 export const customValidation = function(value, rule, modifier = null) {
     function regex() {
@@ -26,6 +26,10 @@ export const customValidation = function(value, rule, modifier = null) {
         return age >= minAge && age <= maxAge;
     }
 
+    function validateFutureMonthYear() {
+        return validateDateMonthYear(value)
+    }
+
     function cpf() {
         return validateCPF(value);
     }
@@ -37,6 +41,7 @@ export const customValidation = function(value, rule, modifier = null) {
         validateAge: validateAge,
         cpf: cpf,
         minLength: minLength,
-        maxLength: maxLength
+        maxLength: maxLength,
+        validateFutureMonthYear: validateFutureMonthYear
     }
 }

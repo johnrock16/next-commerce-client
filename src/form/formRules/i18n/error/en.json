@@ -1,7 +1,8 @@
 {
     "common": {
         "hasText": "Please, fill the field",
-        "dateFormat": "Please, fill with a valid date format"
+        "dateFormat": "Please, fill with a valid date format",
+        "dateFuture": "Please, select a future date"
     },
     "email": {
         "regex": "Please, fill with a valid email format"
@@ -32,5 +33,9 @@
     },
     "zipcode": {
         "regex": "Please, fill with a valid zipcode format"
+    },
+    "cvv": {
+        "minLength": "Please, type a CVV with min of 3 characters",
+        "maxLength": "Please, type a CVV with max of 4 characters"
     }
 }

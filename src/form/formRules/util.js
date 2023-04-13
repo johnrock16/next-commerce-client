@@ -59,3 +59,14 @@ export const calculateAge = function(birthdate) {
     const ageDate = new Date(ageDifference);
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
+
+export const validateDateMonthYear = function(value) {
+    const [month, year] = value.split('/');
+    if (month && year) {
+        const today = new Date();
+        const futureDay = new Date();
+        futureDay.setFullYear(year, month, 1);
+        return futureDay > today;
+    }
+    return false;
+}

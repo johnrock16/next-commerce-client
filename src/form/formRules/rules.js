@@ -105,5 +105,43 @@ export const CUSTOM_RULE =  {
         error: {
             regex: 'zipcode.regex'
         }
+    },
+    cvv: {
+        mask: [[/\D/g, '']],
+        validate: ['hasText', 'minLength', 'maxLength'],
+        params: {
+            minLength: [3],
+            maxLength: [4]
+        },
+        attributes: {
+            maxLength: 4
+        },
+        error: {
+            hasText: 'common.hasText',
+            minLength: 'cvv.minLength',
+            maxLength: 'cvv.maxLength',
+        }
+    },
+    creditCardNumber: {
+        mask: [[/\D/g, ''], [/(\d{4})(\d)/, '$1 $2'], [/(\d{4})(\d)/, '$1 $2'], [/(\d{4})(\d)/, '$1 $2'], [/(\d{4})(\d)/, '$1 $2']],
+        validate: ['hasText'],
+        attributes: {
+            maxLength: 23
+        },
+        error: {
+            hasText: 'common.hasText',
+        }
+    },
+    creditCardExpiratedDate: {
+        regex: /^(1[0-2]|0[1-9]|\d)\/(20\d{2}|19\d{2}|0(?!0)\d|[1-9]\d)$/,
+        mask: [[/\D/g, ''],[/(\d{2})(\d)/, '$1/$2']],
+        validate: ['regex', 'validateFutureMonthYear'],
+        attributes: {
+            maxLength: 7
+        },
+        error: {
+            regex: 'common.dateFormat',
+            validateFutureMonthYear: 'common.dateFuture'
+        }
     }
 };
