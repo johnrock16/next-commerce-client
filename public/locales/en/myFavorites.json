@@ -1,6 +1,7 @@
 {
     "myFavorites": {
         "title": "My Favorites",
-        "products": "Products"
+        "products": "Products",
+        "noProducts": "You don't have any favorite products now"
     }
 }

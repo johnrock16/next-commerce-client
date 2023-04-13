@@ -18,6 +18,7 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@i18n/*": ["./src/i18n/*"],
+      "@form/*": ["./src/form/*"],
       "@mock/*": ["./src/mock/*"],
       "@pages/*": ["./src/pages/*"],
       "@store/*": ["./src/store/*"],
@@ -25,6 +26,6 @@
       "@types/*": ["./src/types/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/reducers/cart.js", "src/store/index.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/store/reducers/cart.js", "src/store/index.js", "src/pages/myAccount/myAddress/index.jsx"],
   "exclude": ["node_modules"]
 }

@@ -1,0 +1,36 @@
+{
+    "common": {
+        "hasText": "Por favor, preencha o campo",
+        "dateFormat": "Por favor, preencha o campo com um formato de data válida"
+    },
+    "email": {
+        "regex": "Por favor, preencha o campo com um formato de email válido"
+    },
+    "phone": {
+        "regex": "Por favor, preencha o campo com um formato de telefone válido"
+    },
+    "dd": {
+        "regex": "Por favor, preencha o campo com um formato de DD válido"
+    },
+    "date": {
+        "validDate": "Data invalida, por favor selecione uma data existente",
+        "modifier": {
+            "age": {
+                "validateAge": "Idade invalida, apenas aceitamos idades maiores ou iguais a 18 anos"
+            }
+        }
+    },
+    "cpf": {
+        "cpf": "Por favor, utilize um CPF válido"
+    },
+    "password": {
+        "weak": "Por favor, crie uma senha com pelo menos 1 letra maiuscula, 1 minuscula, 1 numero ou caracter especial",
+        "minLength": "Por favor, crie uma senha com no minimo 8 caracteres"
+    },
+    "addressNumber": {
+        "maxLength": "Por favor, digite no máximo até 5 caracteres"
+    },
+    "zipcode": {
+        "regex": "Por favor, preencha o campo com um fomrato de CEP valido"
+    }
+}

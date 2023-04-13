@@ -5,6 +5,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import styles from './register.module.scss';
 import Head from 'next/head';
+import { useState } from 'react';
+import { customValidation } from '../../form/formRules/validation';
+import { CUSTOM_RULE } from '../../form/formRules/rules';
+import { useForm } from 'react-hook-form';
+import Form from '../../form/formValidator/form';
 
 export async function getStaticProps({ locale }) {
   return {
@@ -14,6 +19,14 @@ export async function getStaticProps({ locale }) {
 
 const RegisterPage = () => {
     const { t } = useTranslation('register');
+    const { register, handleSubmit } = useForm();
+    const [errors, setErrors] = useState({});
+    const { fieldFormAttributes } = Form({language: 'en', rules: CUSTOM_RULE ,customValidation: customValidation})
+
+    const onSubmit = (data) => {
+        console.log(data)
+    };
+
     return (
     <>
         <Head>
@@ -24,48 +37,47 @@ const RegisterPage = () => {
             <div className='container'>
                 <div className={styles.registerPage__wrapper}>
                     <h1>{t('register.title')}</h1>
-                    <form className='form'>
+                    <form className='form' onSubmit={handleSubmit(onSubmit)}>
                         <div className='form__field col-6'>
                             <label htmlFor='firstName'>
                                 {t('register.form.firstName')}
-                                <input name="firstName" className='form__input' type="text" data-rule="name"/>
+                                <input {...fieldFormAttributes({name: 'firstName', rule: 'name', register, setErrors})} className='form__input' type="text"/>
                             </label>
-                            <span className='form__error'></span>
+                            {(errors?.firstName) ? <span className='form__error'>{errors.firstName}</span> : null}
                         </div>
                         <div className='form__field col-6'>
                             <label htmlFor='lastName'>
                                 {t('register.form.lastName')}
-                                <input name="lastName" className='form__input' type="text"/>
-                            </label>
-                            <span className='form__error'></span>
+                                <input {...fieldFormAttributes({name: 'lastName', rule: 'name', register, setErrors})} className='form__input' type="text"/>
+                            </label>{(errors?.lastName) ? <span className='form__error'>{errors.lastName}</span> : null}
                         </div>
                         <div className='form__field col-12'>
                             <label htmlFor='email'>
                                 {t('register.form.email')}
-                                <input name='email' className='form__input' type="email"/>
+                                <input {...fieldFormAttributes({name: 'email', rule: 'email', register, setErrors})} className='form__input' type="email"/>
                             </label>
-                            <span className='form__error'></span>
+                            {(errors?.email) ? <span className='form__error'>{errors.email}</span> : null}
                         </div>
                         <div className='form__field col-12'>
                             <label htmlFor='phone'>
                                 {t('register.form.phone')}
-                                <input name='phone' className='form__input' type="tel"/>
+                                <input {...fieldFormAttributes({name: 'phone', rule: 'phone', register, setErrors})} className='form__input' type="tel"/>
                             </label>
-                            <span className='form__error'></span>
+                            {(errors?.phone) ? <span className='form__error'>{errors.phone}</span> : null}
                         </div>
                         <div className='form__field col-12'>
-                            <label htmlFor='birthday'>
-                                {t('register.form.birthday')}
-                                <input name='birthday' className='form__input' type='date'/>
+                            <label htmlFor='birthdate'>
+                                {t('register.form.birthdate')}
+                                <input {...fieldFormAttributes({name: 'birthdate', rule: 'date--age', register, setErrors})}  className='form__input' type="date"/>
                             </label>
-                            <span className='form__error'></span>
+                            {(errors?.birthdate) ? <span className='form__error'>{errors.birthdate}</span> : null}
                         </div>
                         <div className='form__field col-12'>
                             <label htmlFor='password'>
                                 {t('register.form.password')}
-                                <input name='password' className='form__input' type='password'/>
+                                <input {...fieldFormAttributes({name: 'password', rule: 'password', register, setErrors})} name='password' className='form__input' type='password'/>
                             </label>
-                            <span className='form__error'></span>
+                            {(errors?.password) ? <span className='form__error'>{errors.password}</span> : null}
                         </div>
                         <button className='form__button button button--secondary col-12' type='submit'>{t('register.form.button')}</button>
                     </form>

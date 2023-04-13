@@ -16,6 +16,7 @@ export async function getStaticProps({ locale }) {
 
 export default function AddressFormPage() {
     const { t } = useTranslation(['myAddress', 'common']);
+
     return (
         <>
             <Head>
@@ -27,7 +28,6 @@ export default function AddressFormPage() {
                     <div className={styles.myAddressPage__wrapper}>
                         <h1>{t('myAddress.title')}</h1>
                         <div className={styles.myAddressPage__addresses}>
-
                             <Link href='/myAccount/myAddress/form' className={styles['myAddressPage__address--add']}>
                                 <IoAddSharp/>
                                 <h2>{t('myAddress.productAdd')}</h2>

@@ -6,7 +6,7 @@
             "lastName": "Sobrenome",
             "email": "Email",
             "phone": "Telefone",
-            "birthday": "Data de Nascimento",
+            "birthdate": "Data de Nascimento",
             "password": "Senha",
             "button": "Atualize"
         },

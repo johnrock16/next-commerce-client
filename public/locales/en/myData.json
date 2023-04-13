@@ -6,7 +6,7 @@
             "lastName": "Last Name",
             "email": "Email",
             "phone": "Phone",
-            "birthday": "Birthday",
+            "birthdate": "birthdate",
             "password": "Password",
             "button": "Update"
         },

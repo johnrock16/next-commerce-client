@@ -17,6 +17,7 @@ export async function getStaticProps({ locale }) {
 export default function MyFavoritePage(){
     const { t } = useTranslation('myFavorites');
     const favoriteProducts = useSelector((state) => state.user.favorite);
+
     return (
         <>
             <Head>
@@ -28,15 +29,17 @@ export default function MyFavoritePage(){
                     <div className={styles.myFavoritesPage__wrapper}>
                         <h1>{t('myFavorites.title')}</h1>
                         <h2>{t('myFavorites.products')}</h2>
-                        <div className={styles.myFavoritesPage__products}>
                             {
-                                (favoriteProducts && Object.keys(favoriteProducts).length > 0) ?
-                                    Object.keys(favoriteProducts).map((favoriteProduct, index) => (
+                                (favoriteProducts && Object.keys(favoriteProducts).length > 0)
+                                ?
+                                <div className={styles.myFavoritesPage__products}>
+                                    {Object.keys(favoriteProducts).map((favoriteProduct, index) => (
                                         <ProductTile key={`favoriteProduct-${index}`} pid={favoriteProduct}/>
-                                    ))
-                                : null
+                                    ))}
+                                </div>
+                                :
+                                <p className={styles.myFavoritesPage__paragraph}>{t('myFavorites.noProducts')}</p>
                             }
-                        </div>
                     </div>
                 </div>
             </main>

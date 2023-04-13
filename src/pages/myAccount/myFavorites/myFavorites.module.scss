@@ -30,5 +30,10 @@
             }
         }
     }
+
+    &__paragraph {
+        padding-top: $gutter;
+        @include fontSize(2.0);
+    }
 }
 
