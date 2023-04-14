@@ -33,7 +33,7 @@ export default function Minicart() {
                         <span>R$ {cart.price.total}</span>
                     </div>
                     <div className={styles.minicart__action}>
-                        <Link href="/checkout" className={styles.minicart__title}>{t('minicart.cart')}</Link>
+                        <span className={styles.minicart__title}>{t('minicart.cart')}</span>
                     </div>
                 </div>
                 <div className={styles.minicart__body}>
@@ -44,9 +44,15 @@ export default function Minicart() {
                             ))
                         }
                     </div>
-                    <Link href="/checkout" className={styles.minicart__checkout}>
-                        <button className='button button--secondary'>Checkout</button>
-                    </Link>
+                    {
+                        (Object.keys(cart.items).length > 0)
+                        ?
+                        <Link href="/checkout" className={styles.minicart__checkout}>
+                            <button className='button button--secondary'>Checkout</button>
+                        </Link>
+                        :
+                        null
+                    }
                 </div>
             </div>
         </div> : null)

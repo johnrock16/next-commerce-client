@@ -10,6 +10,11 @@ import CreditForm from '../../../components/payment/forms/creditForm/creditForm'
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import { useForm } from 'react-hook-form';
+import { CUSTOM_RULE } from '@form/formRules/rules';
+import { customValidation } from '@form/formRules/validation';
+import Form from '@form/formValidator/form';
+import { useRouter } from 'next/router';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -20,10 +25,20 @@ export async function getStaticProps({ locale }) {
 export default function CheckoutPaymentPage(){
     const [selectedPaymentForm, setSelectedPaymentForm] = useState(null);
     const { t } = useTranslation('checkoutPayment');
+    const { register, handleSubmit } = useForm();
+    const [errors, setErrors] = useState({});
+    const router = useRouter()
+    const { fieldFormAttributes } = Form({language: 'en', rules: CUSTOM_RULE, customValidation: customValidation})
 
     const handleSelectPayment = (e) => {
         setSelectedPaymentForm(e.target.value);
     }
+
+    const onSubmit = (data) => {
+        if(data && Object.keys(data).length > 0) {
+            router.push('/checkout/confirm');
+        }
+    };
 
     return (
         <>
@@ -33,7 +48,7 @@ export default function CheckoutPaymentPage(){
             <SimpleHeader/>
             <main className={styles.paymentPage}>
                 <div className='container'>
-                    <div className={styles.paymentPage__wrapper}>
+                    <form className={styles.paymentPage__wrapper} onSubmit={handleSubmit(onSubmit)}>
                         <h1>{t('checkoutPayment.title')}</h1>
                         <div className={styles.paymentPage__details}>
                             <h2>{t('checkoutPayment.paymentMethod')}</h2>
@@ -63,19 +78,19 @@ export default function CheckoutPaymentPage(){
                                 (selectedPaymentForm === 'boleto') ?
                                     <div className={styles.paymentPage__formWrapper}>
                                         <span>{t('checkoutPayment.paymentForm')}</span>
-                                        <BoletoForm/>
+                                        <BoletoForm fieldFormAttributes={fieldFormAttributes} errors={errors} register={register} setErrors={setErrors}/>
                                     </div>
                                 :
                                 (selectedPaymentForm === 'debit') ?
                                     <div className={styles.paymentPage__formWrapper}>
                                         <span>{t('checkoutPayment.paymentForm')}</span>
-                                        <DebitForm/>
+                                        <DebitForm fieldFormAttributes={fieldFormAttributes} errors={errors} register={register} setErrors={setErrors}/>
                                     </div>
                                 :
                                 (selectedPaymentForm === 'credit') ?
                                     <div className={styles.paymentPage__formWrapper}>
                                         <span>{t('checkoutPayment.paymentForm')}</span>
-                                        <CreditForm/>
+                                        <CreditForm fieldFormAttributes={fieldFormAttributes} errors={errors} register={register} setErrors={setErrors}/>
                                     </div>
                                 : null
                             : null
@@ -102,10 +117,10 @@ export default function CheckoutPaymentPage(){
                                 </div>
                             </div>
                         </div>
-                        <Link href='/checkout/confirm' className={styles.checkoutPage__boxBottom}>
-                            <button className='button button--secondary'>{t('checkoutPayment.buttonBuy')}</button>
-                        </Link>
-                    </div>
+                        <div className={styles.checkoutPage__boxBottom}>
+                            <button type='submit' className='button button--secondary'>{t('checkoutPayment.buttonBuy')}</button>
+                        </div>
+                    </form>
                 </div>
             </main>
             <Footer/>

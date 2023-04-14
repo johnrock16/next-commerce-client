@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
 
-export default function ButtonFavorite({className, favorited, ...buttonEvents}) {
+export default function ButtonFavorite({className, favorited, aria, ...buttonEvents}) {
     const [isFavorite, setFavorite] = useState(false);
 
     const handleButton = (onFunction) => {
@@ -19,6 +19,6 @@ export default function ButtonFavorite({className, favorited, ...buttonEvents}) 
     }, [favorited]);
 
     return(
-        <button className={className} {...buttonEvents}>{(isFavorite) ? <IoHeartSharp/> : <IoHeartOutline/>}</button>
+        <button className={className} aria-label={aria} {...buttonEvents}>{(isFavorite) ? <IoHeartSharp/> : <IoHeartOutline/>}</button>
     )
 }

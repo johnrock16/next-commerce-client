@@ -33,7 +33,7 @@ export default function ProductTile({pid}) {
     return (
         <div className={styles.productTile}>
             <div className={styles.productTile__favorite}>
-                <ButtonFavorite className="button button--icon" onClick={handleFavorite} favorited={isFavorite}/>
+                <ButtonFavorite className="button button--icon" onClick={handleFavorite} favorited={isFavorite} aria={`Favorite button of product ${name}`}/>
             </div>
             <Link href={`/product/${id}`}>
                 <Image src={image.src} alt='next logo' width={200} height={200} loading='lazy'/>
