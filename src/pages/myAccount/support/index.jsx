@@ -9,6 +9,7 @@ import { useState } from 'react';
 import Form from '@form/formValidator/form';
 import { CUSTOM_RULE } from '@form/formRules/rules';
 import { customValidation } from '@form/formRules/validation';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
@@ -35,6 +36,7 @@ export default function SupportPage(){
             <main className={styles.supportPage}>
                 <div className='container'>
                     <div className={styles.supportPage__wrapper}>
+                        <Breadcrumb/>
                         <h1>{t('support.title')}</h1>
                         <form className='form' onSubmit={handleSubmit(onSubmit)}>
                             <div className='form__field col-12'>

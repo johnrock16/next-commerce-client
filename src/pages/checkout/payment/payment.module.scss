@@ -14,6 +14,12 @@
         padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
     }
 
+    &__breadcrumbWrapper {
+        > ul {
+            margin-bottom: 0;
+        }
+    }
+
     &__box {
         display: flex;
         flex-direction: column;

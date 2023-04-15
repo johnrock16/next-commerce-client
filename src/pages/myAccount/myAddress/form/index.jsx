@@ -9,6 +9,7 @@ import { useState } from 'react';
 import Form from '@form/formValidator/form';
 import { CUSTOM_RULE } from '@form/formRules/rules';
 import { customValidation } from '@form/formRules/validation';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -34,6 +35,7 @@ export default function AddressFormPage(){
             <main className={styles.myAddressFormPage}>
                 <div className='container'>
                     <div className={styles.myAddressFormPage__wrapper}>
+                        <Breadcrumb/>
                         <h1>{t('myAddressForm.title')}</h1>
                         <form className='form' onSubmit={handleSubmit(onSubmit)}>
                             <div className='form__field col-12'>

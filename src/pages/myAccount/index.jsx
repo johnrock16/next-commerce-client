@@ -6,6 +6,7 @@ import styles from './myAccount.module.scss';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -24,6 +25,7 @@ export default function MyAccountPage(){
             <main className={styles.myAccountPage}>
                 <div className='container'>
                     <div className={styles.myAccountPage__wrapper}>
+                        <Breadcrumb/>
                         <h1>{t('myAccount.title')}</h1>
                         <div className={styles.myAccountPage__options}>
                             <Link href='/myAccount/myData' className={styles.myAccountPage__option}>

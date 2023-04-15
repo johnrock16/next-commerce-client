@@ -15,6 +15,7 @@ import { CUSTOM_RULE } from '@form/formRules/rules';
 import { customValidation } from '@form/formRules/validation';
 import Form from '@form/formValidator/form';
 import { useRouter } from 'next/router';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -49,6 +50,9 @@ export default function CheckoutPaymentPage(){
             <main className={styles.paymentPage}>
                 <div className='container'>
                     <form className={styles.paymentPage__wrapper} onSubmit={handleSubmit(onSubmit)}>
+                        <div className={styles.paymentPage__breadcrumbWrapper}>
+                            <Breadcrumb/>
+                        </div>
                         <h1>{t('checkoutPayment.title')}</h1>
                         <div className={styles.paymentPage__details}>
                             <h2>{t('checkoutPayment.paymentMethod')}</h2>

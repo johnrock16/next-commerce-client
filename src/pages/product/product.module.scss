@@ -11,10 +11,13 @@
     }
 
     &__wrapper {
+        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
+    }
+
+    &__content {
         display: flex;
         flex-wrap: wrap;
         gap: $gutter * 2;
-        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
     }
 
     &__banner {

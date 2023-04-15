@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -24,6 +25,9 @@ export default function CheckoutShippingPage(){
             <main className={styles.shippingPage}>
                 <div className='container'>
                     <div className={styles.shippingPage__wrapper}>
+                        <div className={styles.shippingPage__breadcrumbWrapper}>
+                            <Breadcrumb/>
+                        </div>
                         <h1>{t('checkoutShipping.title')}</h1>
                         <div className={styles.shippingPage__details}>
                             <h2>{t('checkoutShipping.addressChoose')}</h2>

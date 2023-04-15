@@ -9,6 +9,7 @@ import styles from './product.module.scss';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export const getServerSideProps = async ({ query, locale }) => {
     const pid = query.pid;
@@ -40,16 +41,19 @@ const ProductPage = ({product}) => {
             <main className={styles.productPage}>
                 <div className='container'>
                     <div className={styles.productPage__wrapper}>
-                        <div className={styles.productPage__banner}>
-                            <Image className='img-fluid' src={product.image.src} alt={product.image.alt} width={240} height={240}/>
+                        <Breadcrumb isDynamicPage={true}/>
+                        <div className={styles.productPage__content}>
+                            <div className={styles.productPage__banner}>
+                                <Image className='img-fluid' src={product.image.src} alt={product.image.alt} width={240} height={240}/>
+                            </div>
+                            <div className={styles.productPage__info}>
+                                <h1>{product.name}</h1>
+                                <h2>{product.seller}</h2>
+                                <span className={styles.productPage__price}>R${product.price.total}</span>
+                                <p>ou em x{product.price.parcel.times} de {product.price.parcel.value}</p>
+                            </div>
+                            <button className='button button--buy' onClick={handleProductAdd}>{t('button.buy')}</button>
                         </div>
-                        <div className={styles.productPage__info}>
-                            <h1>{product.name}</h1>
-                            <h2>{product.seller}</h2>
-                            <span className={styles.productPage__price}>R${product.price.total}</span>
-                            <p>ou em x{product.price.parcel.times} de {product.price.parcel.value}</p>
-                        </div>
-                        <button className='button button--buy' onClick={handleProductAdd}>{t('button.buy')}</button>
                     </div>
                 </div>
             </main>

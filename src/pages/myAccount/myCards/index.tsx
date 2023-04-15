@@ -6,6 +6,7 @@ import styles from './myCards.module.scss';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
@@ -25,6 +26,7 @@ export default function AddressFormPage(){
             <main className={styles.myCardsPage}>
                 <div className='container'>
                     <div className={styles.myCardsPage__wrapper}>
+                        <Breadcrumb/>
                         <h1>{t('myCards.title')}</h1>
                         <div className={styles.myCardsPage__addresses}>
                             <Link href='/myAccount/myCards/form' className={styles['myCardsPage__address--add']}>

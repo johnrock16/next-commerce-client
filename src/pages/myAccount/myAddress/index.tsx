@@ -6,6 +6,7 @@ import styles from './myAddress.module.scss';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
@@ -26,6 +27,7 @@ export default function AddressFormPage() {
             <main className={styles.myAddressPage}>
                 <div className='container'>
                     <div className={styles.myAddressPage__wrapper}>
+                        <Breadcrumb/>
                         <h1>{t('myAddress.title')}</h1>
                         <div className={styles.myAddressPage__addresses}>
                             <Link href='/myAccount/myAddress/form' className={styles['myAddressPage__address--add']}>

@@ -7,6 +7,7 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { useSelector } from 'react-redux';
+import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export async function getStaticProps({ locale }) {
     return {
@@ -27,6 +28,7 @@ export default function MyFavoritePage(){
             <main className={styles.myFavoritesPage}>
                 <div className='container'>
                     <div className={styles.myFavoritesPage__wrapper}>
+                        <Breadcrumb/>
                         <h1>{t('myFavorites.title')}</h1>
                         <h2>{t('myFavorites.products')}</h2>
                             {
