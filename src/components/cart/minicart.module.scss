@@ -8,7 +8,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #00000073;
+    background-color: $blackOpacity;
     z-index: 1;
 
     &__wrapper {
@@ -35,7 +35,7 @@
         gap: $gutter * 3;
         padding: $gutter * 3 $gutter * 2 $gutter * 2 $gutter * 2;
         color: $white;
-        background-color: #232f3e;
+        background-color: $primary;
     }
 
 

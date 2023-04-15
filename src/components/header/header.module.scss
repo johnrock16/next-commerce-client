@@ -1,7 +1,7 @@
 @import '../../styles/source/core.scss';
 
 .header {
-    background-color: #232f3e;
+    background-color: $primary;
 
     &__wrapper {
         display: flex;
@@ -36,7 +36,7 @@
         }
 
         button {
-            background-color: #fcbb6a;
+            background-color: $secondary;
             border-radius: $borderRadius;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;

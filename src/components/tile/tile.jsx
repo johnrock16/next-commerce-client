@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './tile.module.scss';
 
-export default function Tile() {
+export default function Tile({href, image, text}) {
     return (
-        <Link href="/category/smartphone" className={styles.tile}>
-            <Image src="/images/category/smartphone.webp" alt="next category" width={80} height={80} loading='lazy'/>
-            <span>Category</span>
+        <Link href={href} className={styles.tile}>
+            <Image src={image.src} alt={image.alt} width={80} height={80} loading='lazy'/>
+            <span>{text}</span>
         </Link>
     );
 }
