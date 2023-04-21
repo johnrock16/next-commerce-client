@@ -1,0 +1,19 @@
+@import '../../../styles/source/core.scss';
+
+.faqPage {
+    min-height: 80vh;
+
+    h1 {
+        padding-bottom: $gutter * 2;
+    }
+
+    &__wrapper {
+        padding: $gutter * 2 $gutter * 2 $gutter * 5 $gutter * 2;
+    }
+
+    &__questions {
+        display: flex;
+        flex-direction: column;
+        gap: $gutter * 2;
+    }
+}
