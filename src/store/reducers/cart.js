@@ -1,8 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
   items: {},
-  favorite: {},
   price: {
     total: 0,
     parcel: {
@@ -18,15 +17,24 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action) => {
-      const {id, name, price, seller, image } = action.payload;
+      const {id, name } = action.payload;
+      const price = {
+        total: action.payload.priceTotal,
+        parcel: {
+          value: action.payload.priceTotal / action.payload.priceParcelTimes,
+          times: action.payload.priceParcelTimes
+        }
+      }
+      const image = action.payload.thumb.data.attributes;
+      const seller = action.payload.seller.data.attributes.name;
       const items = (state.items[id]) ? {...state.items, [id]:{...state.items[id], count: state.items[id].count + 1}} : {...state.items, [id]:{id, count: 1, name, price, seller, image}};
-      const eventMinicartOpen = new CustomEvent('minicart/open');
       let parcelTimes = [...state.price.parcel.times];
       if(parcelTimes.indexOf(price.parcel.times) === -1) {
         parcelTimes.push(price.parcel.times)
         parcelTimes.sort(function(a, b){return b - a});
       }
 
+      const eventMinicartOpen = new CustomEvent('minicart/open');
       window.dispatchEvent(eventMinicartOpen);
       return {
         ...state,

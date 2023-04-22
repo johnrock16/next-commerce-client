@@ -2,12 +2,13 @@ import Image from "next/image";
 import styles from './productCart.module.scss';
 import ProductCount from '../productCount/productCount';
 import Link from "next/link";
+import { STRAPI_URL } from "@/rest/env";
 
 export default function ProductCart({product}) {
     const {id, name, price, seller} = product
     return (
         <div className={styles.productCart}>
-            <Image src={product.image.src} alt={product.image.alt} width={120} height={120}/>
+            <Image src={STRAPI_URL+product.image.url} alt={product.image.alternativeText} width={120} height={120}/>
             <div className={styles.productCart__description}>
                 <div className={styles.productCart__info}>
                     <Link href={`/product/${id}`} className={styles.productCart__title}>{name}</Link>

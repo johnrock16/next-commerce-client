@@ -3,11 +3,11 @@ import Footer from '@components/footer/footer';
 import Minicart from '@components/cart/minicart';
 import styles from './about.module.scss';
 import { restAPI } from '../../../rest/env';
-import showdow from 'showdown';
+import showdown from 'showdown';
 
 export async function getStaticProps({ locale }) {
     const aboutUs = await restAPI('strapi', 'aboutUS');
-    const converter = new showdow.Converter()
+    const converter = new showdown.Converter()
     return {
       props: {locale, aboutUs: converter.makeHtml(aboutUs.data.attributes.about)},
     }

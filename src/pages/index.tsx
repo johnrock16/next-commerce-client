@@ -8,15 +8,22 @@ import Card from '@components/card/card';
 import Minicart from '@components/cart/minicart';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
+import { STRAPI_API_URL, STRAPI_URL, restAPI } from '../rest/env';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
+  const products = await restAPI('strapi', 'products');
   return {
-    props: {...await serverSideTranslations(locale, ['components', 'common'])},
+    props: {
+      products: products.data,
+      ...await serverSideTranslations(locale, ['components', 'common'])
+    },
   }
 }
 
-export default function Home() {
+// @ts-ignore: next-line
+export default function Home({products}) {
+  // console.log(products)
   return (
     <>
       <Head>
@@ -42,23 +49,17 @@ export default function Home() {
           <section className='section--productNavigate'>
             <h2>Mais vendidos</h2>
             <ListNavigate>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
+              <ProductTile pid={products[0].id} productObject={products[0].attributes}/>
+              <ProductTile pid={products[1].id} productObject={products[1].attributes}/>
+              <ProductTile pid={products[2].id} productObject={products[2].attributes}/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Recomendados</h2>
             <ListNavigate>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
+              <ProductTile pid={products[0].id} productObject={products[0].attributes}/>
+              <ProductTile pid={products[1].id} productObject={products[1].attributes}/>
+              <ProductTile pid={products[2].id} productObject={products[2].attributes}/>
             </ListNavigate>
           </section>
           <Card>
