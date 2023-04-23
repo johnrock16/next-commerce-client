@@ -27,7 +27,8 @@ const cartSlice = createSlice({
       }
       const image = action.payload.thumb.data.attributes;
       const seller = action.payload.seller.data.attributes.name;
-      const items = (state.items[id]) ? {...state.items, [id]:{...state.items[id], count: state.items[id].count + 1}} : {...state.items, [id]:{id, count: 1, name, price, seller, image}};
+      const sellerID = action.payload.seller.data.id;
+      const items = (state.items[id]) ? {...state.items, [id]:{...state.items[id], count: state.items[id].count + 1}} : {...state.items, [id]:{id, count: 1, name, price, seller, sellerID, image}};
       let parcelTimes = [...state.price.parcel.times];
       if(parcelTimes.indexOf(price.parcel.times) === -1) {
         parcelTimes.push(price.parcel.times)

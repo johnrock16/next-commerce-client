@@ -25,7 +25,6 @@ export const getServerSideProps = async ({ query, locale }) => {
 }
 
 export default function CategoryPage({category}) {
-  console.log(category)
   return (
     <>
       <Head>
@@ -42,14 +41,14 @@ export default function CategoryPage({category}) {
           <section className='section--categoryNavigate'>
             <h2>Navegue por categorias</h2>
             <ListNavigate>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
@@ -69,31 +68,31 @@ export default function CategoryPage({category}) {
             </ListNavigate>
           </section>
           <Card>
-            <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+            <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
           </Card>
           <Card>
             <div className='grid--card'>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
             </div>
           </Card>
           <Card>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
           </Card>
           <Card>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
           </Card>
 
           <Card>
             <div className='grid--card'>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
             </div>
           </Card>
         </div>

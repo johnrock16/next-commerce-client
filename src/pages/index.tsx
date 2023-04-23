@@ -60,7 +60,7 @@ export default function Home({products, categories}) {
             </ListNavigate>
           </section>
           <Card>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
           </Card>
           <Card>
             <div className='grid--card'>
@@ -71,10 +71,10 @@ export default function Home({products, categories}) {
             </div>
           </Card>
           <Card>
-            <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+            <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
           </Card>
           <Card>
-            <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+            <TileSquare href={'/category/1'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
           </Card>
 
           <Card>

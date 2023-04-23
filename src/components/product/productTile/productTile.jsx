@@ -55,7 +55,7 @@ export default function ProductTile({pid, productObject}) {
                 </Link>
                 <div className={styles.productTile__description}>
                     <Link href={`/product/${pid}`}><h3>{product.name}</h3></Link>
-                    <Link className={styles.productTile__company} href={`/company/vid`}>{product.seller.data.attributes.name}</Link>
+                    <Link className={styles.productTile__company} href={`/company/${product.seller.data.id}`}>{product.seller.data.attributes.name}</Link>
                     <span className={styles.productTile__priceTotal}>R$ {product.priceTotal}</span>
                     <span className={styles.productTile__priceParcel}>em até {product.priceParcelTimes}x de R$ {(product.priceTotal / product.priceParcelTimes).toFixed(2)} sem juros</span>
                 </div>
