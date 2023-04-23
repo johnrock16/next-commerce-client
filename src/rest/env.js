@@ -66,6 +66,19 @@ export const STRAPI_PATHS = {
             }
         },
         resolveMethod: 'json'
+    },
+    'categories': {
+        path: '/categories?populate=*',
+        config: {
+            GET: {
+                method: 'GET',
+                headers: {
+                    "content-type": "application/json",
+                    "accept": "application/json"
+                }
+            }
+        },
+        resolveMethod: 'json'
     }
 }
 

@@ -13,8 +13,10 @@ import { STRAPI_API_URL, STRAPI_URL, restAPI } from '../rest/env';
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
   const products = await restAPI('strapi', 'products');
+  const categories = await restAPI('strapi', 'categories');
   return {
     props: {
+      categories: categories.data,
       products: products.data,
       ...await serverSideTranslations(locale, ['components', 'common'])
     },
@@ -22,8 +24,7 @@ export async function getStaticProps({ locale }) {
 }
 
 // @ts-ignore: next-line
-export default function Home({products}) {
-  // console.log(products)
+export default function Home({products, categories}) {
   return (
     <>
       <Head>
@@ -36,14 +37,10 @@ export default function Home({products}) {
           <section className='section--categoryNavigate'>
             <h2>Navegue por categorias</h2>
             <ListNavigate>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <Tile href={'/category/'+categories[0].id} image={{src: STRAPI_URL+categories[0].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[0].attributes.thumb.data.attributes.alternativeText}} text={categories[0].attributes.name}/>
+              <Tile href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <Tile href={'/category/'+categories[2].id} image={{src: STRAPI_URL+categories[2].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[2].attributes.thumb.data.attributes.alternativeText}} text={categories[2].attributes.name}/>
+              <Tile href={'/category/'+categories[3].id} image={{src: STRAPI_URL+categories[3].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[3].attributes.thumb.data.attributes.alternativeText}} text={categories[3].attributes.name}/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
@@ -67,10 +64,10 @@ export default function Home({products}) {
           </Card>
           <Card>
             <div className='grid--card'>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/'+categories[0].id} image={{src: STRAPI_URL+categories[0].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[0].attributes.thumb.data.attributes.alternativeText}} text={categories[0].attributes.name}/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <TileSquare href={'/category/'+categories[2].id} image={{src: STRAPI_URL+categories[2].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[2].attributes.thumb.data.attributes.alternativeText}} text={categories[2].attributes.name}/>
+              <TileSquare href={'/category/'+categories[3].id} image={{src: STRAPI_URL+categories[3].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[3].attributes.thumb.data.attributes.alternativeText}} text={categories[3].attributes.name}/>
             </div>
           </Card>
           <Card>
@@ -82,12 +79,12 @@ export default function Home({products}) {
 
           <Card>
             <div className='grid--card'>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
+              <TileSquare href={'/category/'+categories[1].id} image={{src: STRAPI_URL+categories[1].attributes.thumb.data.attributes.formats.thumbnail.url, alt: categories[1].attributes.thumb.data.attributes.alternativeText}} text={categories[1].attributes.name}/>
             </div>
           </Card>
         </div>

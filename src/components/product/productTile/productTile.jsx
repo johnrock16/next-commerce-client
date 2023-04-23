@@ -34,7 +34,6 @@ export default function ProductTile({pid, productObject}) {
 
     useEffect(()=> {
         if(!productObject) {
-            console.log('aqui', pid)
             const requestProduct = async () => {
                 const productResolve = await fetch(STRAPI_API_URL+`/products/${pid}?populate=*`,{method: 'GET'})
                 const productResult = await productResolve.json();

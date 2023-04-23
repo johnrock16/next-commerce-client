@@ -53,17 +53,17 @@ export default function CompanyPage({category}) {
           <section className='section--productNavigate'>
             <h2>Mais vendidos</h2>
             <ListNavigate>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ps4ctrl"/>
+              <ProductTile pid="2"/>
+              <ProductTile pid="2"/>
+              <ProductTile pid="2"/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Recomendados</h2>
             <ListNavigate>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ps4ctrl"/>
+              <ProductTile pid="2"/>
+              <ProductTile pid="2"/>
+              <ProductTile pid="2"/>
             </ListNavigate>
           </section>
           <Card>

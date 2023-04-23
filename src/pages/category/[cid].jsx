@@ -8,22 +8,24 @@ import Card from '@components/card/card';
 import Minicart from '@components/cart/minicart';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import CATEGORY from '@mock/category/category';
 import styles from './category.module.scss';
+import { STRAPI_API_URL } from '../../rest/env';
 
 export const getServerSideProps = async ({ query, locale }) => {
   const cid = query.cid;
-  const category = CATEGORY[cid];
+  const categoryResolve = await fetch(STRAPI_API_URL+`/categories/${cid}?populate=*`,{method: 'GET'})
+  const category = await categoryResolve.json();
 
   return {
     props: {
-      category,
+      category: category.data,
       ...await serverSideTranslations(locale, ['product','components', 'common'])
     }
   }
 }
 
 export default function CategoryPage({category}) {
+  console.log(category)
   return (
     <>
       <Head>
@@ -34,7 +36,7 @@ export default function CategoryPage({category}) {
         <Minicart/>
         <div className='container'>
           <section className={styles.categoryPage__about}>
-            <h1>{category.title}</h1>
+            <h1>{category.attributes.name}</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae consequatur tempora ex maiores excepturi, ipsam sapiente officia sint odit, exercitationem iure provident nam culpa, aliquam dignissimos praesentium adipisci repellat vel!</p>
           </section>
           <section className='section--categoryNavigate'>
@@ -53,17 +55,17 @@ export default function CategoryPage({category}) {
           <section className='section--productNavigate'>
             <h2>Mais vendidos</h2>
             <ListNavigate>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="smphone"/>
+              <ProductTile pid="1"/>
+              <ProductTile pid="1"/>
+              <ProductTile pid="1"/>
             </ListNavigate>
           </section>
           <section className='section--productNavigate'>
             <h2>Recomendados</h2>
             <ListNavigate>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="smphone"/>
+              <ProductTile pid="1"/>
+              <ProductTile pid="1"/>
+              <ProductTile pid="1"/>
             </ListNavigate>
           </section>
           <Card>
