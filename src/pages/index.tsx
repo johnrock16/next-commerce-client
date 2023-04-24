@@ -8,7 +8,7 @@ import Card from '@components/card/card';
 import Minicart from '@components/cart/minicart';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import { STRAPI_API_URL, STRAPI_URL, restAPI } from '../rest/env';
+import { STRAPI_URL, restAPI } from '../rest/env';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
