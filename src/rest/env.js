@@ -92,6 +92,45 @@ export const STRAPI_PATHS = {
             }
         },
         resolveMethod: 'json'
+    },
+    'homepage/categories': {
+        path: '/homepage?populate[categoriesShowcase][populate][categories][populate]=*',
+        config: {
+            GET: {
+                method: 'GET',
+                headers: {
+                    "content-type": "application/json",
+                    "accept": "application/json"
+                }
+            }
+        },
+        resolveMethod: 'json'
+    },
+    'homepage/products': {
+        path: '/homepage?populate[productsShowcase][populate][products][populate]=*',
+        config: {
+            GET: {
+                method: 'GET',
+                headers: {
+                    "content-type": "application/json",
+                    "accept": "application/json"
+                }
+            }
+        },
+        resolveMethod: 'json'
+    },
+    'homepage/cards': {
+        path: '/homepage?populate[cardsShowcase][populate][cards][populate]=*',
+        config: {
+            GET: {
+                method: 'GET',
+                headers: {
+                    "content-type": "application/json",
+                    "accept": "application/json"
+                }
+            }
+        },
+        resolveMethod: 'json'
     }
 }
 
