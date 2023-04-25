@@ -3,5 +3,11 @@
         "buy": "Comprar",
         "update": "Alterar",
         "delete": "Excluir"
+    },
+    "footer": {
+        "aboutUs": "Sobre nós",
+        "faq": "FAQ",
+        "privacyPolicy": "Politica de Privacidade",
+        "termsUse": "Termos de Uso"
     }
 }
