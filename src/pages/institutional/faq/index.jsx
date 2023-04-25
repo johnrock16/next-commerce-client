@@ -6,6 +6,7 @@ import { restAPI } from '../../../rest/env';
 import ButtonFaq from '../../../components/button/buttonFaq/buttonFaq';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 
 export async function getStaticProps({ locale }) {
     const questions = await restAPI('strapi', 'faq');
@@ -22,6 +23,9 @@ export default function FaqPage({questions}) {
     const { t } = useTranslation('common');
     return (
         <>
+            <Head>
+                <meta name='description' content={`FAQ Page here you can see all Frequent Answers and Questions`}/>
+            </Head>
             <Minicart/>
             <Header/>
             <main className={styles.faqPage}>

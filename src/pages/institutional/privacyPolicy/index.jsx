@@ -6,14 +6,19 @@ import { restAPI } from '../../../rest/env';
 import showdown from 'showdown';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import Head from 'next/head';
+import createDOMPurify from 'dompurify';
+import { JSDOM } from 'jsdom';
 
 export async function getStaticProps({ locale }) {
     const terms = await restAPI('strapi', 'privacyPolicy');
-    const converter = new showdown.Converter()
+    const converter = new showdown.Converter();
+    const window = new JSDOM('').window;
+    const DOMPurify = createDOMPurify(window);
     return {
       props: {
         locale,
-        privacyPolicy: converter.makeHtml(terms.data.attributes.privacyPolicy),
+        privacyPolicy: DOMPurify.sanitize(converter.makeHtml(terms.data.attributes.privacyPolicy)),
         ...await serverSideTranslations(locale, ['components', 'common'])
       }
     }
@@ -23,6 +28,9 @@ export default function PrivacyPolicyPage({privacyPolicy}) {
     const { t } = useTranslation('common');
     return (
         <>
+            <Head>
+                <meta name='description' content={`Privacy Policy Page here you can see our privacy policy`}/>
+            </Head>
             <Minicart/>
             <Header/>
             <main className={styles.privacyPolicyPage}>
