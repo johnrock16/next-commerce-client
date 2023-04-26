@@ -14,7 +14,7 @@ import Breadcrumb from '@components/breadcrumb/breadcrumb';
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
     return {
-      props: {...await serverSideTranslations(locale, ['support'])},
+      props: {...await serverSideTranslations(locale, ['support', 'common'])},
     }
 }
 
