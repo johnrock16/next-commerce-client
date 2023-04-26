@@ -73,6 +73,14 @@ span, p {
     }
 }
 
+.richText {
+    @include fontSize(1.4);
+
+    img {
+        max-width: 100%;
+    }
+}
+
 @media ($aboveDesktopSmall) {
     .container {
         max-width: $desktopSmallSize;

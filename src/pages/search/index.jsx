@@ -36,9 +36,9 @@ export default function MySearchPage(){
                         <div>
                             <h2>{t('search.results')}</h2>
                             <div className={styles.searchPage__products}>
-                                <ProductTile pid="ns2017"/>
-                                <ProductTile pid="smphone"/>
-                                <ProductTile pid="smphone"/>
+                                <ProductTile pid="2"/>
+                                <ProductTile pid="1"/>
+                                <ProductTile pid="1"/>
                             </div>
                         </div>
                     </div>

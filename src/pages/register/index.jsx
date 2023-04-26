@@ -13,7 +13,7 @@ import Form from '../../form/formValidator/form';
 
 export async function getStaticProps({ locale }) {
   return {
-    props: {...await serverSideTranslations(locale, ['register'])},
+    props: {...await serverSideTranslations(locale, ['register', 'common'])},
   }
 }
 

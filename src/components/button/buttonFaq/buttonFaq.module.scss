@@ -1,0 +1,22 @@
+@import '../../../styles/source/core.scss';
+
+.buttonFaq {
+    display: flex;
+    flex-direction: column;
+    gap: $gutter;
+
+    > button {
+        justify-content: space-between;
+        padding: 0 $gutter * 2;
+        color: $black;
+        background-color: $white;
+
+        > svg {
+            @include fontSize(2.4)
+        }
+    }
+
+    > p {
+        padding: 0 $gutter * 2;
+    }
+}

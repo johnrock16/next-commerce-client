@@ -8,15 +8,26 @@ import Card from '@components/card/card';
 import Minicart from '@components/cart/minicart';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
+import { STRAPI_URL, restAPI } from '../rest/env';
 
 // @ts-ignore: next-line
 export async function getStaticProps({ locale }) {
+  const categoriesShowcase = await restAPI('strapi', 'homepage/categories');
+  const productsShowcase = await restAPI('strapi', 'homepage/products');
+  const cardsShowcase = await restAPI('strapi', 'homepage/cards');
+
   return {
-    props: {...await serverSideTranslations(locale, ['components', 'common'])},
+    props: {
+      categoriesShowcase: categoriesShowcase.data.attributes.categoriesShowcase,
+      productsShowcase: productsShowcase.data.attributes.productsShowcase,
+      cardsShowcase: cardsShowcase.data.attributes.cardsShowcase,
+      ...await serverSideTranslations(locale, ['components', 'common'])
+    },
   }
 }
 
-export default function Home() {
+// @ts-ignore: next-line
+export default function Home({categoriesShowcase, productsShowcase, cardsShowcase}) {
   return (
     <>
       <Head>
@@ -27,68 +38,67 @@ export default function Home() {
         <Minicart/>
         <div className='container'>
           <section className='section--categoryNavigate'>
-            <h2>Navegue por categorias</h2>
+            <h2>{categoriesShowcase.title}</h2>
             <ListNavigate>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <Tile href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
+              {
+                (categoriesShowcase.categories && categoriesShowcase.categories.data.length > 0)
+                ?
+                  categoriesShowcase.categories.data.map((category: any, index: any) => (
+                    <Tile href={'/category/'+category.id} image={{src: STRAPI_URL+category.attributes.thumb.data.attributes.formats.thumbnail.url, alt: category.attributes.thumb.data.attributes.alternativeText}} text={category.attributes.name} key={`categories-home-${categoriesShowcase.title}-${category.id}`}/>
+                  ))
+                :
+                  null
+              }
             </ListNavigate>
           </section>
-          <section className='section--productNavigate'>
-            <h2>Mais vendidos</h2>
-            <ListNavigate>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
-            </ListNavigate>
-          </section>
-          <section className='section--productNavigate'>
-            <h2>Recomendados</h2>
-            <ListNavigate>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
-              <ProductTile pid="ps4ctrl"/>
-              <ProductTile pid="ns2017"/>
-              <ProductTile pid="smphone"/>
-            </ListNavigate>
-          </section>
-          <Card>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-          </Card>
-          <Card>
-            <div className='grid--card'>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-            </div>
-          </Card>
-          <Card>
-            <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-          </Card>
-          <Card>
-            <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-          </Card>
-
-          <Card>
-            <div className='grid--card'>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-              <TileSquare href={'/category/smartphone'} image={{src:'/images/category/smartphone.webp', alt: 'A smartphone with so much colors in background'}} text="Smartphones"/>
-            </div>
-          </Card>
+          {
+            (productsShowcase && productsShowcase.length > 0)
+            ?
+            productsShowcase.map((productShowcase : any, index : Number) => (
+                <section className='section--productNavigate' key={`productNavigate-${index}`}>
+                  <h2>{productShowcase.title}</h2>
+                  <ListNavigate>
+                    {
+                      (productShowcase.products && productShowcase.products.data.length > 0)
+                      ?
+                        productShowcase.products.data.map((product: any, index: any) => (
+                          <ProductTile pid={product.id} productObject={product.attributes} key={`productItem-${productShowcase.title}-${index}`}/>
+                        ))
+                      :
+                        null
+                    }
+                  </ListNavigate>
+                </section>
+              ))
+            :
+              null
+          }
+          {
+            (cardsShowcase && cardsShowcase.length > 0)
+            ?
+              cardsShowcase.map((cardShowcase: any, index: Number) => (
+                <Card title={cardShowcase.title} key={`cardsShowcase-home-${cardShowcase.id}`}>
+                  {
+                    (cardShowcase.cards)?
+                      (cardShowcase.cards.length > 1)
+                      ?
+                        <div className='grid--card'>
+                          {
+                            cardShowcase.cards.map((card : any, index : Number) => (
+                              <TileSquare href={card.redirect} image={{src: STRAPI_URL+card.thumb.data.attributes.url, alt: card.thumb.data.attributes.alternativeText}} text={card.title} key={`cardShowcase-card-${cardShowcase.id}-${card.id}-${index}`}/>
+                            ))
+                          }
+                        </div>
+                      :
+                        <TileSquare href={cardShowcase.cards[0].redirect} image={{src: STRAPI_URL+cardShowcase.cards[0].thumb.data.attributes.url, alt: cardShowcase.cards[0].thumb.data.attributes.alternativeText}} text={cardShowcase.cards[0].title}/>
+                    :
+                      null
+                  }
+                </Card>
+              ))
+            :
+              null
+          }
         </div>
       </main>
       <Footer/>

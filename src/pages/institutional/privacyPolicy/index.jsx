@@ -1,7 +1,7 @@
 import Header from '@components/header/header';
 import Footer from '@components/footer/footer';
 import Minicart from '@components/cart/minicart';
-import styles from './about.module.scss';
+import styles from './privacyPolicy.module.scss';
 import { restAPI } from '../../../rest/env';
 import showdown from 'showdown';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -11,33 +11,33 @@ import createDOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 
 export async function getStaticProps({ locale }) {
-    const aboutUs = await restAPI('strapi', 'aboutUS');
+    const terms = await restAPI('strapi', 'privacyPolicy');
     const converter = new showdown.Converter();
     const window = new JSDOM('').window;
     const DOMPurify = createDOMPurify(window);
     return {
       props: {
         locale,
-        aboutUs: DOMPurify.sanitize(converter.makeHtml(aboutUs.data.attributes.about)),
+        privacyPolicy: DOMPurify.sanitize(converter.makeHtml(terms.data.attributes.privacyPolicy)),
         ...await serverSideTranslations(locale, ['components', 'common'])
-      },
+      }
     }
 }
 
-export default function AboutPage({aboutUs}) {
+export default function PrivacyPolicyPage({privacyPolicy}) {
     const { t } = useTranslation('common');
     return (
         <>
             <Head>
-                <meta name='description' content={`About us Page here you can see our story`}/>
+                <meta name='description' content={`Privacy Policy Page here you can see our privacy policy`}/>
             </Head>
             <Minicart/>
             <Header/>
-            <main className={styles.aboutPage}>
+            <main className={styles.privacyPolicyPage}>
                 <div className='container'>
-                    <div className={styles.aboutPage__wrapper}>
-                        <h1>{t('footer.aboutUs')}</h1>
-                        <div className='richText' dangerouslySetInnerHTML={{__html: aboutUs}}></div>
+                    <div className={styles.privacyPolicyPage__wrapper}>
+                        <h1>{t('footer.privacyPolicy')}</h1>
+                        <div className='richText' dangerouslySetInnerHTML={{__html: privacyPolicy}}></div>
                     </div>
                 </div>
             </main>

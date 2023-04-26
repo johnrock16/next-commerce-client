@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 
 export async function getStaticProps({ locale }) {
     return {
-      props: {...await serverSideTranslations(locale, ['checkout','components'])},
+      props: {...await serverSideTranslations(locale, ['checkout','components', 'common'])},
     }
 }
 

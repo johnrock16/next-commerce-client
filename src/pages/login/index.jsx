@@ -8,7 +8,7 @@ import Head from 'next/head';
 
 export async function getStaticProps({ locale }) {
     return {
-      props: {...await serverSideTranslations(locale, ['login'])},
+      props: {...await serverSideTranslations(locale, ['login', 'common'])},
     }
 }
 

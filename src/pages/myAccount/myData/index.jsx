@@ -13,7 +13,7 @@ import Breadcrumb from '@components/breadcrumb/breadcrumb';
 
 export async function getStaticProps({ locale }) {
     return {
-      props: {...await serverSideTranslations(locale, ['myData'])},
+      props: {...await serverSideTranslations(locale, ['myData', 'common'])},
     }
 }
 
