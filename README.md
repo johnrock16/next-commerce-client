@@ -84,7 +84,7 @@ para mais informações acesse: https://docs.strapi.io/dev-docs/data-management/
 Feito isso finalmente poderemos iniciar nosso ambiente de desenvolvimento com os seguintes comandos:
 ```
 npm run dev // para este projeto next
-npm run develop // para o dashboard do
+npm run develop // para o dashboard do strapi
 ```
 
 ## Algumas imagens sobre o projeto
